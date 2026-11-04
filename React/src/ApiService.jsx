@@ -3,7 +3,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const registerUser = async (formData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/form_capture.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/form_capture.php`,
       {
         method: "POST",
         headers: {
@@ -25,7 +25,7 @@ export const registerUser = async (formData) => {
 export const loginUser = async (formData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/login_capture.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/login_capture.php`,
       {
         method: "POST",
         headers: {
@@ -47,7 +47,7 @@ export const loginUser = async (formData) => {
 export const logoutUser = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/logout_component.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/logout_component.php`,
       {
         method: "POST",
         credentials: "include",
@@ -68,7 +68,7 @@ export const logoutUser = async () => {
 export const verifyEmail = async (token) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/verify_email.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/verify_email.php`,
       {
         method: "POST",
         headers: {
@@ -92,7 +92,7 @@ export const verifyEmail = async (token) => {
 export const passwordResetLink = async (email) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/password_reset_link.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/password_reset_link.php`,
       {
         method: "POST",
         headers: {
@@ -117,7 +117,7 @@ export const passwordResetLink = async (email) => {
 export const passwordResetToken = async (token) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/password_reset_token.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/password_reset_token.php`,
       {
         method: "POST",
         headers: {
@@ -144,7 +144,7 @@ export const passwordResetToken = async (token) => {
 export const updatePassword = async (token, newPassword) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/update_password.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/update_password.php`,
       {
         method: "POST",
         headers: {
@@ -174,7 +174,7 @@ export const updatePassword = async (token, newPassword) => {
 export const checkSession = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/check_session.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/check_session.php`,
       {
         method: "GET",
         credentials: "include",
@@ -194,7 +194,7 @@ export const checkSession = async () => {
 export const serviceManager = async (servicesData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/service_manager.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/service_manager.php`,
       {
         method: "POST",
         headers: {
@@ -218,7 +218,7 @@ export const serviceManager = async (servicesData) => {
 export const customerProfileGet = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/customer_profile_get.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_profile_get.php`,
       {
         method: "GET",
         credentials: "include",
@@ -238,7 +238,7 @@ export const customerProfileGet = async () => {
 export const customerProfilePost = async (profileData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/customer_profile_post.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_profile_post.php`,
       {
         method: "POST",
         headers: {
@@ -262,7 +262,7 @@ export const customerProfilePost = async (profileData) => {
 export const customerDeleteAccount = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/customer_delete_account.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_delete_account.php`,
       {
         method: "POST",
         headers: {
@@ -285,7 +285,7 @@ export const customerDeleteAccount = async () => {
 export const adminServicesListGet = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_services_list_get.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_services_list_get.php`,
       {
         method: "GET",
         credentials: "include",
@@ -305,7 +305,7 @@ export const adminServicesListGet = async () => {
 export const adminServicesListPost = async (serviceData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_services_list_post.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_services_list_post.php`,
       {
         method: "POST",
         headers: {
@@ -329,7 +329,7 @@ export const adminServicesListPost = async (serviceData) => {
 export const servicesPriceList = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/services_price_list.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/services_price_list.php`,
       {
         method: "GET",
       },
@@ -348,7 +348,7 @@ export const servicesPriceList = async () => {
 export const adminGalleryImages = async (formData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_gallery_images.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_gallery_images.php`,
       {
         method: "POST",
 
@@ -370,7 +370,7 @@ export const adminGalleryImages = async (formData) => {
 export const adminGalleryImagesManagerGet = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_gallery_images_manager_get.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_gallery_images_manager_get.php`,
       {
         method: "GET",
         credentials: "include",
@@ -395,7 +395,7 @@ export const adminGalleryImagesManagerGet = async () => {
 export const adminGalleryImagesManagerPost = async (imageData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_gallery_images_manager_post.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_gallery_images_manager_post.php`,
       {
         method: "POST",
         headers: {
@@ -426,7 +426,7 @@ export const adminGalleryImagesManagerPost = async (imageData) => {
 export const galleryImages = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/gallery_images.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/gallery_images.php`,
       {
         method: "GET",
       },
@@ -445,7 +445,7 @@ export const galleryImages = async () => {
 export const adminBlogEntry = async (formData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_blog_entry.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_blog_entry.php`,
       {
         method: "POST",
         credentials: "include",
@@ -473,7 +473,7 @@ export const adminBlogEntry = async (formData) => {
 export const adminBlogManagerGet = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_blog_manager_get.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_blog_manager_get.php`,
       {
         method: "GET",
         credentials: "include",
@@ -500,7 +500,7 @@ export const adminBlogManagerGet = async () => {
 export const adminBlogManagerPost = async (postData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_blog_manager_post.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_blog_manager_post.php`,
       {
         method: "POST",
         headers: {
@@ -531,7 +531,7 @@ export const adminBlogManagerPost = async (postData) => {
 export const blog = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/blog.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/blog.php`,
       {
         method: "GET",
       },
@@ -557,7 +557,7 @@ export const blog = async () => {
 export const testimonialCarousel = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/testimonial_carousel.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/testimonial_carousel.php`,
       {
         method: "GET",
       },
@@ -583,7 +583,7 @@ export const testimonialCarousel = async () => {
 export const adminCreateProduct = async (formData) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_create_product.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_create_product.php`,
       {
         method: "POST",
         credentials: "include",
@@ -611,7 +611,7 @@ export const adminCreateProduct = async (formData) => {
 export const adminManageProductsGet = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_manage_products_get.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_manage_products_get.php`,
       {
         method: "GET",
         credentials: "include",
@@ -643,7 +643,7 @@ export const adminManageProductsPost = async (productData) => {
 
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_manage_products_post.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_manage_products_post.php`,
       {
         method: "POST",
         headers: {
@@ -676,7 +676,7 @@ export const adminManageProductsPost = async (productData) => {
 export const shopGetProducts = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/shop_get_products.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/shop_get_products.php`,
       {
         method: "GET",
       },
@@ -702,7 +702,7 @@ export const shopGetProducts = async () => {
 export const shopCreateCheckoutSession = async (items, deliveryChargePence) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/shop_create_checkout_session.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/shop_create_checkout_session.php`,
       {
         method: "POST",
         headers: {
@@ -739,7 +739,7 @@ export const shopCreateCheckoutSession = async (items, deliveryChargePence) => {
 export const deliveryChargeGet = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/delivery_charge_get.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/delivery_charge_get.php`,
       {
         method: "GET",
         credentials: "include",
@@ -773,7 +773,7 @@ export const deliveryChargeGet = async () => {
 export const adminShopOrders = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/admin_shop_orders.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_shop_orders.php`,
       {
         method: "GET",
         credentials: "include",
@@ -800,7 +800,7 @@ export const adminShopOrders = async () => {
 export const customerShopOrders = async () => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/Rasa_Hair_Studio/PHP/customer_shop_orders.php`,
+      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_shop_orders.php`,
       {
         method: "GET",
         credentials: "include",

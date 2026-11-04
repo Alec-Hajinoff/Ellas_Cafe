@@ -204,7 +204,7 @@ try {
         )
         VALUES
         (
-            4,
+            2,
             :email,
             :password,
             :token,

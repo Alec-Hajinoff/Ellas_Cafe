@@ -105,6 +105,42 @@ try {
     die('Connection failed: ' . $e->getMessage());
 }
 
+try {
+
+    $userExistsSql = "
+        SELECT id
+        FROM users
+        LIMIT 1
+    ";
+
+    $userExistsStmt = $conn->prepare($userExistsSql);
+    $userExistsStmt->execute();
+
+    if ($userExistsStmt->fetch(PDO::FETCH_ASSOC)) {
+
+        echo json_encode([
+            'success' => false,
+            'message' => 'Registration has been disabled.',
+        ]);
+
+        exit;
+    }
+
+} catch (Exception $e) {
+
+    error_log(
+        'User existence check failed: ' .
+        $e->getMessage()
+    );
+
+    echo json_encode([
+        'success' => false,
+        'message' => 'Unable to verify registration status.',
+    ]);
+
+    exit;
+}
+
 $input = json_decode(
     file_get_contents('php://input'),
     true

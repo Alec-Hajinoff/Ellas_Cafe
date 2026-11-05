@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useBasket } from "./BasketContext";
+
 import { adminExists } from "./ApiService";
 import blue from "./Images/Rasa_Hair_Studio_Logo.svg";
 import LogoutComponent from "./LogoutComponent";
@@ -8,7 +8,6 @@ import "./Header.css";
 
 function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
   const location = useLocation();
-  const { itemCount } = useBasket();
 
   const [hasActiveUsers, setHasActiveUsers] = useState(true);
 

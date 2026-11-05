@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
-import { BasketProvider } from "./BasketContext";
+
 import { checkSession } from "./ApiService";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./Header";
@@ -61,10 +61,8 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <BasketProvider>
-        <ScrollToTop />
-        <AppContent />
-      </BasketProvider>
+      <ScrollToTop />
+      <AppContent />
     </Router>
   );
 }

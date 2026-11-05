@@ -189,62 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// adminGalleryImagesManagerGet() fetchs all gallery records.
-
-export const adminGalleryImagesManagerGet = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_gallery_images_manager_get.php`,
-      {
-        method: "GET",
-        credentials: "include",
-      },
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || "Failed to load gallery images.");
-    }
-
-    return data;
-  } catch (error) {
-    console.error("Error fetching gallery images:", error);
-    throw new Error(error.message || "An error occurred while loading images.");
-  }
-};
-
-// adminGalleryImagesManagerPost() allows admins to update image title or delete image.
-
-export const adminGalleryImagesManagerPost = async (imageData) => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_gallery_images_manager_post.php`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify(imageData),
-      },
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.message || "Gallery image request failed.");
-    }
-
-    return data;
-  } catch (error) {
-    console.error("Error updating or deleting gallery image:", error);
-    throw new Error(
-      error.message || "An error occurred while processing the image.",
-    );
-  }
-};
-
 // galleryImages() fetches all active gallery images for the public gallery page.
 
 export const galleryImages = async () => {

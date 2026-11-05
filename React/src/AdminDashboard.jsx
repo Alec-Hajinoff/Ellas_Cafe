@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import AdminGalleryImagesManager from "./AdminGalleryImagesManager";
 import AdminShopOrders from "./AdminShopOrders";
 import AdminManageProducts from "./AdminManageProducts";
 import AdminCreateProduct from "./AdminCreateProduct";
@@ -28,16 +27,6 @@ function AdminDashboard() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "images":
-        return (
-          <div className="tab-pane-content">
-            <AdminGalleryImagesManager
-              key={galleryRefreshKey}
-              refreshKey={galleryRefreshKey}
-            />
-          </div>
-        );
-
       case "blog":
         return (
           <div className="tab-pane-content">

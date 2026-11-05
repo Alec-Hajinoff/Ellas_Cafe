@@ -58,8 +58,6 @@ function AdminDashboard() {
           <div className="d-none d-lg-block mb-4">
             <h3>{activeLabel}</h3>
           </div>
-
-          <main>{renderContent()}</main>
         </div>
       </div>
 

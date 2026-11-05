@@ -4,7 +4,6 @@ import AdminShopOrders from "./AdminShopOrders";
 import AdminManageProducts from "./AdminManageProducts";
 import AdminCreateProduct from "./AdminCreateProduct";
 import AdminBlogManager from "./AdminBlogManager";
-import AdminBlogEntry from "./AdminBlogEntry";
 
 const NAV_ITEMS = [
   { key: "images", label: "Images" },
@@ -30,10 +29,6 @@ function AdminDashboard() {
       case "blog":
         return (
           <div className="tab-pane-content">
-            <AdminBlogEntry
-              onPostSaved={() => setBlogRefreshKey((key) => key + 1)}
-            />
-
             <div className="mt-4">
               <AdminBlogManager
                 posts={blogPosts}

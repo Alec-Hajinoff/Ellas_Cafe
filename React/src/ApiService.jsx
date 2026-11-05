@@ -189,34 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// adminBlogEntry() allows admins to write a blog entry.
-
-export const adminBlogEntry = async (formData) => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_blog_entry.php`,
-      {
-        method: "POST",
-        credentials: "include",
-        body: formData,
-      },
-    );
-
-    const data = await response.json();
-
-    if (!response.ok || data.status !== "success") {
-      throw new Error(data.message || "The blog post could not be saved.");
-    }
-
-    return data;
-  } catch (error) {
-    console.error("Error saving blog post:", error);
-    throw new Error(
-      error.message || "An error occurred while saving the post.",
-    );
-  }
-};
-
 // adminBlogManagerGet() retrieves all blog posts for the admin manager.
 
 export const adminBlogManagerGet = async () => {

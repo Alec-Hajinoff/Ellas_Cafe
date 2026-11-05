@@ -9,7 +9,7 @@ import AdminDashboard from "./AdminDashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import UserLogin from "./UserLogin";
 import UserRegistration from "./UserRegistration";
-import Shop from "./Shop";
+
 import Basket from "./Basket";
 import OrderSuccess from "./OrderSuccess";
 
@@ -23,13 +23,6 @@ export default function AppRoutes({ isAuthenticated }) {
       <Route path="/" element={<MainRegLog />} />
 
       <Route path="/AboutUs" element={<AboutUs />} />
-
-      <Route
-        path="/Shop"
-        element={<Shop isAuthenticated={isAuthenticated} />}
-      />
-
-      <Route path="/Shop/:productId" element={<ProductDetails />} />
 
       <Route path="/Basket" element={<Basket />} />
 

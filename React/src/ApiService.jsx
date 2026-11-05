@@ -215,32 +215,6 @@ export const testimonialCarousel = async () => {
   }
 };
 
-// shopGetProducts() fetches products for the public shop page, with the most recent product first.
-
-export const shopGetProducts = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/shop_get_products.php`,
-      {
-        method: "GET",
-      },
-    );
-
-    const data = await response.json();
-
-    if (!response.ok || data.status !== "success") {
-      throw new Error(data.message || "Products could not be loaded.");
-    }
-
-    return data.products;
-  } catch (error) {
-    console.error("Error fetching shop products:", error);
-    throw new Error(
-      error.message || "An error occurred while loading products.",
-    );
-  }
-};
-
 // shopCreateCheckoutSession() initiates a Stripe Checkout Session for the items in the user's basket and returns the session URL.
 
 export const shopCreateCheckoutSession = async (items, deliveryChargePence) => {

@@ -189,29 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// customerDeleteAccount() soft-deletes user profile data and destroys active session
-
-export const customerDeleteAccount = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_delete_account.php`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      },
-    );
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error deleting account:", error);
-    throw new Error("An error occurred while deleting your account.");
-  }
-};
-
 // adminGalleryImages() uploads multiple gallery images to the backend.
 
 export const adminGalleryImages = async (formData) => {

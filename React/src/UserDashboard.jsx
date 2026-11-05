@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./UserDashboard.css";
 import CustomerShopOrders from "./CustomerShopOrders";
 
-import CustomerDeleteAccount from "./CustomerDeleteAccount";
-
 function UserDashboard() {
   const [activeTab, setActiveTab] = useState("shop-orders");
 
@@ -47,14 +45,6 @@ function UserDashboard() {
           {activeTab === "shop-orders" && (
             <div className="tab-pane-content">
               <CustomerShopOrders />
-            </div>
-          )}
-
-          {activeTab === "account" && (
-            <div className="tab-pane-content">
-              <div className="mt-4">
-                <CustomerDeleteAccount />
-              </div>
             </div>
           )}
         </div>

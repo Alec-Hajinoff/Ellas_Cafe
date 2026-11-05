@@ -72,11 +72,7 @@ function UserLogin() {
     try {
       const data = await loginUser(formData);
       if (data.status === "success") {
-        if (data.role === "customer") {
-          navigate("/UserDashboard");
-        } else {
-          navigate("/AdminDashboard");
-        }
+        navigate("/AdminDashboard");
       } else if (data.status === "unverified") {
         setUnverifiedMessage(data.message);
         clearUnverifiedMessageAfterDelay();

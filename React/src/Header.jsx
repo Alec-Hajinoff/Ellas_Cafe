@@ -50,18 +50,6 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
 
           <div className="col-12 col-md-6">
             <div className="header-account-actions">
-              <Link
-                to="/Basket"
-                className={`header-basket-link ${
-                  location.pathname.toLowerCase() === "/basket" ? "active" : ""
-                }`}
-                aria-label={`Basket, ${itemCount} ${
-                  itemCount === 1 ? "item" : "items"
-                }`}
-              >
-                Basket <span className="badge text-bg-light">{itemCount}</span>
-              </Link>
-
               {!isLoading &&
                 (isAuthenticated ? (
                   <LogoutComponent onLogoutComplete={onLogoutComplete} />

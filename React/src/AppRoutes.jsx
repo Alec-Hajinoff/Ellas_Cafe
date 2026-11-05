@@ -10,7 +10,6 @@ import ProtectedRoute from "./ProtectedRoute";
 import UserLogin from "./UserLogin";
 import UserRegistration from "./UserRegistration";
 
-import Basket from "./Basket";
 import OrderSuccess from "./OrderSuccess";
 
 import AboutUs from "./AboutUs";
@@ -23,8 +22,6 @@ export default function AppRoutes({ isAuthenticated }) {
       <Route path="/" element={<MainRegLog />} />
 
       <Route path="/AboutUs" element={<AboutUs />} />
-
-      <Route path="/Basket" element={<Basket />} />
 
       <Route path="/OrderSuccess" element={<OrderSuccess />} />
 

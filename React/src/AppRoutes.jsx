@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import MainRegLog from "./MainRegLog";
 import RegisteredPage from "./RegisteredPage";
-import UserDashboard from "./UserDashboard";
+
 import LogoutComponent from "./LogoutComponent";
 import VerifyEmail from "./VerifyEmail";
 import PasswordReset from "./PasswordReset";
@@ -25,15 +25,6 @@ export default function AppRoutes({ isAuthenticated }) {
       <Route path="/LogoutComponent" element={<LogoutComponent />} />
       <Route path="/VerifyEmail" element={<VerifyEmail />} />
       <Route path="/PasswordReset" element={<PasswordReset />} />
-
-      <Route
-        path="/UserDashboard"
-        element={
-          <ProtectedRoute>
-            <UserDashboard />
-          </ProtectedRoute>
-        }
-      />
 
       <Route
         path="/AdminDashboard"

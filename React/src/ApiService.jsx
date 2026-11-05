@@ -215,33 +215,6 @@ export const testimonialCarousel = async () => {
   }
 };
 
-// adminShopOrders() retrieves transactions and their items for the admin orders view.
-
-export const adminShopOrders = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_shop_orders.php`,
-      {
-        method: "GET",
-        credentials: "include",
-      },
-    );
-
-    const data = await response.json();
-
-    if (!response.ok || data.status !== "success") {
-      throw new Error(data.message || "Shop orders could not be loaded.");
-    }
-
-    return data;
-  } catch (error) {
-    console.error("Error fetching shop orders:", error);
-    throw new Error(
-      error.message || "An error occurred while loading shop orders.",
-    );
-  }
-};
-
 // customerShopOrders() fetches customer's shop orders and their items for the user dashboard.
 
 export const customerShopOrders = async () => {

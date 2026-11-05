@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import AdminShopOrders from "./AdminShopOrders";
-
 const NAV_ITEMS = [
   { key: "images", label: "Images" },
 
@@ -18,20 +16,6 @@ function AdminDashboard() {
 
   const activeLabel =
     NAV_ITEMS.find((item) => item.key === activeTab)?.label ?? "";
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "shop-orders":
-        return (
-          <div className="tab-pane-content">
-            <AdminShopOrders />
-          </div>
-        );
-
-      default:
-        return null;
-    }
-  };
 
   return (
     <div className="container-fluid mt-3">

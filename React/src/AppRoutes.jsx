@@ -13,7 +13,7 @@ import Shop from "./Shop";
 import Basket from "./Basket";
 import OrderSuccess from "./OrderSuccess";
 import Blog from "./Blog";
-import Services from "./Services";
+
 import GalleryImages from "./GalleryImages";
 import AboutUs from "./AboutUs";
 
@@ -23,7 +23,7 @@ export default function AppRoutes({ isAuthenticated }) {
   return (
     <Routes>
       <Route path="/" element={<MainRegLog />} />
-      <Route path="/Services" element={<Services />} />
+
       <Route path="/Gallery" element={<GalleryImages />} />
       <Route path="/AboutUs" element={<AboutUs />} />
       <Route path="/Blog" element={<Blog />} />

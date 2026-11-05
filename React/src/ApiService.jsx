@@ -212,25 +212,6 @@ export const customerDeleteAccount = async () => {
   }
 };
 
-// servicesPriceList() fetches active services for the public price list.
-
-export const servicesPriceList = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/services_price_list.php`,
-      {
-        method: "GET",
-      },
-    );
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching services price list:", error);
-    throw new Error("An error occurred while loading services.");
-  }
-};
-
 // adminGalleryImages() uploads multiple gallery images to the backend.
 
 export const adminGalleryImages = async (formData) => {

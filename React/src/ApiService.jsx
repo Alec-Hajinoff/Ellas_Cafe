@@ -215,33 +215,6 @@ export const testimonialCarousel = async () => {
   }
 };
 
-// customerShopOrders() fetches customer's shop orders and their items for the user dashboard.
-
-export const customerShopOrders = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_shop_orders.php`,
-      {
-        method: "GET",
-        credentials: "include",
-      },
-    );
-
-    const data = await response.json();
-
-    if (!response.ok || data.status !== "success") {
-      throw new Error(data.message || "Shop orders could not be loaded.");
-    }
-
-    return data;
-  } catch (error) {
-    console.error("Error fetching customer shop orders:", error);
-    throw new Error(
-      error.message || "An error occurred while loading your shop orders.",
-    );
-  }
-};
-
 // adminExists() checks if admin users exist in the database. It returns true if any users have is_deleted = 0, and false if no such users exist.
 
 export const adminExists = async () => {

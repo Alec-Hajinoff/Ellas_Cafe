@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./UserDashboard.css";
-import CustomerShopOrders from "./CustomerShopOrders";
 
 function UserDashboard() {
   const [activeTab, setActiveTab] = useState("shop-orders");
@@ -41,12 +40,6 @@ function UserDashboard() {
               </button>
             </li>
           </ul>
-
-          {activeTab === "shop-orders" && (
-            <div className="tab-pane-content">
-              <CustomerShopOrders />
-            </div>
-          )}
         </div>
       </div>
     </div>

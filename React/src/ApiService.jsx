@@ -189,50 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// customerProfileGet() retrieves profile details of a customer (first_name, surname, phone)
-
-export const customerProfileGet = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_profile_get.php`,
-      {
-        method: "GET",
-        credentials: "include",
-      },
-    );
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching profile:", error);
-    throw new Error("An error occurred while loading your profile.");
-  }
-};
-
-// customerProfilePost() updates customer profile details
-
-export const customerProfilePost = async (profileData) => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/customer_profile_post.php`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify(profileData),
-      },
-    );
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error updating profile:", error);
-    throw new Error("An error occurred while saving profile details.");
-  }
-};
-
 // customerDeleteAccount() soft-deletes user profile data and destroys active session
 
 export const customerDeleteAccount = async () => {

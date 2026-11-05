@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./UserDashboard.css";
 import CustomerShopOrders from "./CustomerShopOrders";
-import CustomerProfile from "./CustomerProfile";
+
 import CustomerDeleteAccount from "./CustomerDeleteAccount";
 
 function UserDashboard() {
@@ -52,7 +52,6 @@ function UserDashboard() {
 
           {activeTab === "account" && (
             <div className="tab-pane-content">
-              <CustomerProfile />
               <div className="mt-4">
                 <CustomerDeleteAccount />
               </div>

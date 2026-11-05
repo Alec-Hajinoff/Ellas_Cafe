@@ -189,25 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// galleryImages() fetches all active gallery images for the public gallery page.
-
-export const galleryImages = async () => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/gallery_images.php`,
-      {
-        method: "GET",
-      },
-    );
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching gallery images:", error);
-    throw new Error("An error occurred while loading gallery images.");
-  }
-};
-
 // adminBlogEntry() allows admins to write a blog entry.
 
 export const adminBlogEntry = async (formData) => {

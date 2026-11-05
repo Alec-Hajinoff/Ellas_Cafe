@@ -12,7 +12,6 @@ import UserRegistration from "./UserRegistration";
 import Shop from "./Shop";
 import Basket from "./Basket";
 import OrderSuccess from "./OrderSuccess";
-import Blog from "./Blog";
 
 import AboutUs from "./AboutUs";
 
@@ -24,7 +23,6 @@ export default function AppRoutes({ isAuthenticated }) {
       <Route path="/" element={<MainRegLog />} />
 
       <Route path="/AboutUs" element={<AboutUs />} />
-      <Route path="/Blog" element={<Blog />} />
 
       <Route
         path="/Shop"

@@ -6,7 +6,7 @@ import AdminCreateProduct from "./AdminCreateProduct";
 
 const NAV_ITEMS = [
   { key: "images", label: "Images" },
-  { key: "blog", label: "Blog" },
+
   { key: "shop-products", label: "Shop Products" },
   { key: "shop-orders", label: "Shop Orders" },
 ];
@@ -17,9 +17,7 @@ function AdminDashboard() {
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
   const [productsRefreshKey, setProductsRefreshKey] = useState(0);
-  const [blogPosts, setBlogPosts] = useState([]);
 
-  const [blogRefreshKey, setBlogRefreshKey] = useState(0);
   const activeLabel =
     NAV_ITEMS.find((item) => item.key === activeTab)?.label ?? "";
 

@@ -189,29 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// blog() displays blog entries on the public blog page, with the most recent post first.
-
-export const blog = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/Ellas_Cafe/PHP/blog.php`, {
-      method: "GET",
-    });
-
-    const data = await response.json();
-
-    if (!response.ok || data.status !== "success") {
-      throw new Error(data.message || "Failed to load blog posts.");
-    }
-
-    return data.posts;
-  } catch (error) {
-    console.error("Error fetching blog posts:", error);
-    throw new Error(
-      error.message || "An error occurred while loading blog posts.",
-    );
-  }
-};
-
 // testimonialCarousel() retrieves Google reviews for display in the testimonial carousel on the homepage.
 
 export const testimonialCarousel = async () => {

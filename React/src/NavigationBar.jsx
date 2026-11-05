@@ -2,19 +2,14 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./NavigationBar.css";
 
-function NavigationBar({ isAuthenticated, userRole }) {
+function NavigationBar({ isAuthenticated }) {
   const location = useLocation();
 
-  const getDashboardPath = () => {
-    if (!isAuthenticated) return "/UserLogin";
-    return userRole === "customer" ? "/UserDashboard" : "/AdminDashboard";
-  };
+  const targetDashboardPath = isAuthenticated
+    ? "/AdminDashboard"
+    : "/UserLogin";
 
-  const targetDashboardPath = getDashboardPath();
-
-  const isDashboardActive =
-    location.pathname === "/UserDashboard" ||
-    location.pathname === "/AdminDashboard";
+  const isDashboardActive = location.pathname === "/AdminDashboard";
 
   return (
     <div className="navigation-bar-wrapper">

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "./AdminDashboard.css";
-import ServiceManager from "./ServiceManager";
-import AdminServicesList from "./AdminServicesList";
+
 import AdminGalleryImages from "./AdminGalleryImages";
 import AdminGalleryImagesManager from "./AdminGalleryImagesManager";
 import AdminShopOrders from "./AdminShopOrders";
@@ -11,7 +9,6 @@ import AdminBlogManager from "./AdminBlogManager";
 import AdminBlogEntry from "./AdminBlogEntry";
 
 const NAV_ITEMS = [
-  { key: "services", label: "Services" },
   { key: "images", label: "Images" },
   { key: "blog", label: "Blog" },
   { key: "shop-products", label: "Shop Products" },
@@ -19,8 +16,7 @@ const NAV_ITEMS = [
 ];
 
 function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState("services");
-  const [servicesRefreshKey, setServicesRefreshKey] = useState(0);
+  const [activeTab, setActiveTab] = useState("images");
   const [galleryRefreshKey, setGalleryRefreshKey] = useState(0);
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
@@ -33,16 +29,6 @@ function AdminDashboard() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "services":
-        return (
-          <div className="tab-pane-content">
-            <ServiceManager
-              onSaved={() => setServicesRefreshKey((key) => key + 1)}
-            />
-            <AdminServicesList key={servicesRefreshKey} />
-          </div>
-        );
-
       case "images":
         return (
           <div className="tab-pane-content">

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import AdminShopOrders from "./AdminShopOrders";
-import AdminManageProducts from "./AdminManageProducts";
 
 const NAV_ITEMS = [
   { key: "images", label: "Images" },
@@ -22,13 +21,6 @@ function AdminDashboard() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "shop-products":
-        return (
-          <div className="tab-pane-content">
-            <AdminManageProducts refreshKey={productsRefreshKey} />
-          </div>
-        );
-
       case "shop-orders":
         return (
           <div className="tab-pane-content">

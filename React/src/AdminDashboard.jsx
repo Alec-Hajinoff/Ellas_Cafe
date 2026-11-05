@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import AdminGalleryImages from "./AdminGalleryImages";
 import AdminGalleryImagesManager from "./AdminGalleryImagesManager";
 import AdminShopOrders from "./AdminShopOrders";
 import AdminManageProducts from "./AdminManageProducts";
@@ -32,9 +31,6 @@ function AdminDashboard() {
       case "images":
         return (
           <div className="tab-pane-content">
-            <AdminGalleryImages
-              onUploadSuccess={() => setGalleryRefreshKey((key) => key + 1)}
-            />
             <AdminGalleryImagesManager
               key={galleryRefreshKey}
               refreshKey={galleryRefreshKey}

@@ -189,28 +189,6 @@ export const checkSession = async () => {
   }
 };
 
-// adminGalleryImages() uploads multiple gallery images to the backend.
-
-export const adminGalleryImages = async (formData) => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_gallery_images.php`,
-      {
-        method: "POST",
-
-        credentials: "include",
-        body: formData,
-      },
-    );
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error uploading gallery images:", error);
-    throw new Error("An error occurred while uploading images.");
-  }
-};
-
 // adminGalleryImagesManagerGet() fetchs all gallery records.
 
 export const adminGalleryImagesManagerGet = async () => {

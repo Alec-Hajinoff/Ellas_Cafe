@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useBasket } from "./BasketContext";
+import { adminExists } from "./ApiService";
 import blue from "./Images/Rasa_Hair_Studio_Logo.svg";
 import LogoutComponent from "./LogoutComponent";
 import "./Header.css";
@@ -8,6 +9,30 @@ import "./Header.css";
 function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
   const location = useLocation();
   const { itemCount } = useBasket();
+
+  const [hasActiveUsers, setHasActiveUsers] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const checkAdminExists = async () => {
+      try {
+        const exists = await adminExists();
+
+        if (isMounted) {
+          setHasActiveUsers(exists);
+        }
+      } catch (error) {
+        console.error("Header could not check whether an admin exists:", error);
+      }
+    };
+
+    checkAdminExists();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <header className="header-wrapper">
@@ -52,16 +77,18 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
                       Log in
                     </Link>
 
-                    <Link
-                      to="/UserRegistration"
-                      className={`header-btn-signup ${
-                        location.pathname === "/UserRegistration"
-                          ? "active"
-                          : ""
-                      }`}
-                    >
-                      Sign up
-                    </Link>
+                    {!hasActiveUsers && (
+                      <Link
+                        to="/UserRegistration"
+                        className={`header-btn-signup ${
+                          location.pathname === "/UserRegistration"
+                            ? "active"
+                            : ""
+                        }`}
+                      >
+                        Sign up
+                      </Link>
+                    )}
                   </div>
                 ))}
             </div>

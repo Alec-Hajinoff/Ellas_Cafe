@@ -530,12 +530,9 @@ export const adminBlogManagerPost = async (postData) => {
 
 export const blog = async () => {
   try {
-    const response = await fetch(
-      `${API_BASE_URL}/Ellas_Cafe/PHP/blog.php`,
-      {
-        method: "GET",
-      },
-    );
+    const response = await fetch(`${API_BASE_URL}/Ellas_Cafe/PHP/blog.php`, {
+      method: "GET",
+    });
 
     const data = await response.json();
 
@@ -818,6 +815,37 @@ export const customerShopOrders = async () => {
     console.error("Error fetching customer shop orders:", error);
     throw new Error(
       error.message || "An error occurred while loading your shop orders.",
+    );
+  }
+};
+
+// adminExists() checks if admin users exist in the database. It returns true if any users have is_deleted = 0, and false if no such users exist.
+
+export const adminExists = async () => {
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/Ellas_Cafe/PHP/admin_exists.php`,
+      {
+        method: "GET",
+        credentials: "include",
+      },
+    );
+
+    const data = await response.json();
+
+    if (
+      !response.ok ||
+      data.success !== true ||
+      typeof data.admin_exists !== "boolean"
+    ) {
+      throw new Error(data.message || "Admin status could not be checked.");
+    }
+
+    return data.admin_exists;
+  } catch (error) {
+    console.error("Error checking admin status:", error);
+    throw new Error(
+      error.message || "An error occurred while checking admin status.",
     );
   }
 };

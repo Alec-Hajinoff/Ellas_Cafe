@@ -12,8 +12,6 @@ import UserRegistration from "./UserRegistration";
 
 import AboutUs from "./AboutUs";
 
-import ProductDetails from "./ProductDetails";
-
 export default function AppRoutes({ isAuthenticated }) {
   return (
     <Routes>

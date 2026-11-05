@@ -32,10 +32,6 @@
   justify-content: center;
 }
 
-.bi-star-fill {
-  color: var(--color-primary);
-}
-
 .testimonial-text {
   font-size: var(--font-size-lg);
   font-style: italic;

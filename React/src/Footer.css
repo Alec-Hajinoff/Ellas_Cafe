@@ -12,7 +12,6 @@
 }
 
 .footer-content {
-  margin: 0;
   color: var(--color-text-inverse);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-base);

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import AdminShopOrders from "./AdminShopOrders";
 import AdminManageProducts from "./AdminManageProducts";
 import AdminCreateProduct from "./AdminCreateProduct";
-import AdminBlogManager from "./AdminBlogManager";
 
 const NAV_ITEMS = [
   { key: "images", label: "Images" },
@@ -26,19 +25,6 @@ function AdminDashboard() {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "blog":
-        return (
-          <div className="tab-pane-content">
-            <div className="mt-4">
-              <AdminBlogManager
-                posts={blogPosts}
-                setPosts={setBlogPosts}
-                refreshKey={blogRefreshKey}
-              />
-            </div>
-          </div>
-        );
-
       case "shop-products":
         return (
           <div className="tab-pane-content">

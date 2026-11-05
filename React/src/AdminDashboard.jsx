@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import AdminShopOrders from "./AdminShopOrders";
 import AdminManageProducts from "./AdminManageProducts";
-import AdminCreateProduct from "./AdminCreateProduct";
 
 const NAV_ITEMS = [
   { key: "images", label: "Images" },
@@ -26,9 +25,6 @@ function AdminDashboard() {
       case "shop-products":
         return (
           <div className="tab-pane-content">
-            <AdminCreateProduct
-              onProductSaved={() => setProductsRefreshKey((key) => key + 1)}
-            />
             <AdminManageProducts refreshKey={productsRefreshKey} />
           </div>
         );

@@ -245,3 +245,36 @@ export const adminExists = async () => {
     );
   }
 };
+
+// adminAddProducts() allows admins to add products to the database.
+
+export const adminAddProducts = async (product) => {
+  const body = new FormData();
+  body.append("name", product.name.trim());
+  body.append("description", product.description.trim());
+  body.append("ingredients", product.ingredients.trim());
+  body.append("price", product.price);
+  body.append("category", product.category);
+  body.append("dietaryTags", JSON.stringify(product.dietaryTags));
+
+  if (product.image) {
+    body.append("image", product.image);
+  }
+
+  const response = await fetch(
+    `${API_BASE_URL}/Ellas_Cafe/PHP/admin_add_products.php`,
+    {
+      method: "POST",
+      credentials: "include",
+      body,
+    },
+  );
+
+  const data = await response.json();
+
+  if (!response.ok || data.success !== true) {
+    throw new Error(data.message || "Product could not be added.");
+  }
+
+  return data;
+};

@@ -22,7 +22,7 @@ const DIETARY_TAGS = [
 const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/png", "image/jpeg", "image/webp"];
 
-function AdminAddProducts() {
+function AdminAddProducts({ onProductAdded }) {
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -118,6 +118,8 @@ function AdminAddProducts() {
       if (!result.success) {
         throw new Error(result.message || "Product could not be added.");
       }
+
+      await onProductAdded?.();
 
       setForm({
         name: "",

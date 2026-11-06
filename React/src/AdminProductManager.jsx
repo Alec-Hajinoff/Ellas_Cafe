@@ -1,31 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { adminProductManagerGet, adminProductManagerPost } from "./ApiService";
+import React, { useState } from "react";
+import { adminProductManagerPost } from "./ApiService";
 import "./AdminProductManager.css";
 
-function AdminProductManager() {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+function AdminProductManager({ products, setProducts, isLoading, error }) {
   const [deletingId, setDeletingId] = useState(null);
-  const [error, setError] = useState("");
   const [message, setMessage] = useState("");
-
-  const loadProducts = useCallback(async () => {
-    setIsLoading(true);
-    setError("");
-
-    try {
-      const data = await adminProductManagerGet();
-      setProducts(data.products);
-    } catch (loadError) {
-      setError(loadError.message || "Products could not be loaded.");
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
 
   const handleDelete = async (product) => {
     const confirmed = window.confirm(
@@ -35,17 +14,17 @@ function AdminProductManager() {
     if (!confirmed) return;
 
     setDeletingId(product.id);
-    setError("");
     setMessage("");
 
     try {
       const data = await adminProductManagerPost(product.id);
+
       setProducts((currentProducts) =>
         currentProducts.filter((item) => item.id !== product.id),
       );
       setMessage(data.message || "Product deleted.");
     } catch (deleteError) {
-      setError(deleteError.message || "Product could not be deleted.");
+      window.alert(deleteError.message || "Product could not be deleted.");
     } finally {
       setDeletingId(null);
     }

@@ -27,6 +27,15 @@ function NavigationBar({ isAuthenticated }) {
               </Link>
 
               <Link
+                to="/Menu"
+                className={`nav-bar-link ${
+                  location.pathname.toLowerCase() === "/menu" ? "active" : ""
+                }`}
+              >
+                Menu
+              </Link>
+
+              <Link
                 to="/AboutUs"
                 className={`nav-bar-link ${
                   location.pathname.toLowerCase() === "/aboutus" ? "active" : ""

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import MainRegLog from "./MainRegLog";
 import RegisteredPage from "./RegisteredPage";
-
+import Menu from "./Menu";
 import LogoutComponent from "./LogoutComponent";
 import VerifyEmail from "./VerifyEmail";
 import PasswordReset from "./PasswordReset";
@@ -16,9 +16,8 @@ export default function AppRoutes({ isAuthenticated }) {
   return (
     <Routes>
       <Route path="/" element={<MainRegLog />} />
-
+      <Route path="/Menu" element={<Menu />} />
       <Route path="/AboutUs" element={<AboutUs />} />
-
       <Route path="/UserLogin" element={<UserLogin />} />
       <Route path="/UserRegistration" element={<UserRegistration />} />
       <Route path="/RegisteredPage" element={<RegisteredPage />} />

@@ -29,14 +29,17 @@ function AdminDashboard() {
     <div className="container mt-4">
       <h1>Admin Dashboard</h1>
 
-      <AdminAddProducts onProductAdded={refreshProducts} />
-
-      <AdminProductManager
-        products={products}
-        setProducts={setProducts}
-        isLoading={isLoadingProducts}
-        error={productsError}
-      />
+      <div className="row">
+        <div className="col-12 col-md-11 col-lg-10 mx-auto d-flex flex-column">
+          <AdminAddProducts onProductAdded={refreshProducts} />
+          <AdminProductManager
+            products={products}
+            setProducts={setProducts}
+            isLoading={isLoadingProducts}
+            error={productsError}
+          />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,12 +1,8 @@
 .admin-add-products {
-  max-width: 760px;
-  margin: 2rem auto;
-  padding: clamp(1.25rem, 3vw, 2rem);
-  border: 1px solid #e6e0d8;
-  border-radius: 14px;
-  background: #fff;
-  color: #29251f;
-  box-shadow: 0 8px 28px rgb(43 34 24 / 7%);
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .admin-add-products h2 {

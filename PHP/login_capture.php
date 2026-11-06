@@ -10,8 +10,8 @@ if ($config === false) {
 
 $allowed_origins = [
     'http://localhost:5173',
-    'https://rasalstudio.com',
-    'https://www.rasalstudio.com',
+    'https://ellascafe.com',
+    'https://www.ellascafe.com',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? null;

@@ -278,3 +278,47 @@ export const adminAddProducts = async (product) => {
 
   return data;
 };
+
+// adminProductManagerGet() retrieves all products from the database for display in the admin product manager.
+
+export const adminProductManagerGet = async () => {
+  const response = await fetch(
+    `${API_BASE_URL}/Ellas_Cafe/PHP/admin_product_manager_get.php`,
+    {
+      method: "GET",
+      credentials: "include",
+    },
+  );
+
+  const data = await response.json();
+
+  if (!response.ok || data.success !== true || !Array.isArray(data.products)) {
+    throw new Error(data.message || "Products could not be loaded.");
+  }
+
+  return data;
+};
+
+// adminProductManagerPost() deletes a product from the database and its corresponding image from the server.
+
+export const adminProductManagerPost = async (productId) => {
+  const response = await fetch(
+    `${API_BASE_URL}/Ellas_Cafe/PHP/admin_product_manager_post.php`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ product_id: productId }),
+    },
+  );
+
+  const data = await response.json();
+
+  if (!response.ok || data.success !== true) {
+    throw new Error(data.message || "Product could not be deleted.");
+  }
+
+  return data;
+};

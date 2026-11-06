@@ -1,0 +1,50 @@
+.admin-product-manager {
+  margin-top: 2rem;
+}
+
+.admin-product-manager__table-wrap {
+  overflow-x: auto;
+}
+
+.admin-product-manager__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-product-manager__table th,
+.admin-product-manager__table td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-product-manager__table th {
+  background: #f8f9fa;
+}
+
+.admin-product-manager__delete {
+  padding: 0.4rem 0.75rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #b02a37;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-product-manager__delete:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.admin-product-manager__notice {
+  margin: 0.75rem 0;
+}
+
+.admin-product-manager__notice--error {
+  color: #b02a37;
+}
+
+.admin-product-manager__notice--success {
+  color: #146c43;
+}

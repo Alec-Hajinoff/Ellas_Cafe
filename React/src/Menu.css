@@ -4,9 +4,94 @@
   padding: 1rem;
 }
 
-.menu-placeholder {
+.menu-message {
   margin-top: 1.5rem;
-  padding: 1.5rem;
+}
+
+.menu-error {
+  color: #a12222;
+}
+
+.menu-product-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.menu-product {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
   border: 1px solid #ddd;
   border-radius: 6px;
+}
+
+.menu-product-image {
+  width: 160px;
+  height: 140px;
+  flex: 0 0 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.menu-product-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.menu-product-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.menu-product-heading h2 {
+  margin: 0;
+}
+
+.menu-product-price {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.menu-product-category,
+.menu-product-ingredients {
+  margin: 0.5rem 0;
+}
+
+.menu-product-category {
+  color: #555;
+}
+
+.menu-dietary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-dietary-tags li {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .menu-product {
+    flex-direction: column;
+  }
+
+  .menu-product-image {
+    width: 100%;
+    height: 190px;
+    flex-basis: auto;
+  }
+
+  .menu-product-heading {
+    align-items: flex-start;
+  }
 }

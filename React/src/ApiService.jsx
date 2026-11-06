@@ -322,3 +322,31 @@ export const adminProductManagerPost = async (productId) => {
 
   return data;
 };
+
+// menuGet() fetches product details for display on the menu page.
+
+export const menuGet = async () => {
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/Ellas_Cafe/PHP/menu_get.php`,
+      { method: "GET" },
+    );
+
+    const data = await response.json();
+
+    if (
+      !response.ok ||
+      data.success !== true ||
+      !Array.isArray(data.products)
+    ) {
+      throw new Error(data.message || "Products could not be loaded.");
+    }
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching menu products:", error);
+    throw new Error(
+      error.message || "An error occurred while loading products.",
+    );
+  }
+};

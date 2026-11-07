@@ -6,8 +6,9 @@ export default function Menu() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
-
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const [selectedDietaryTags, setSelectedDietaryTags] = useState([]);
 
   const CATEGORY_ORDER = [
     "breakfast & brunch",
@@ -16,6 +17,14 @@ export default function Menu() {
     "cakes & desserts",
     "hot drinks",
     "cold drinks",
+  ];
+
+  const DIETARY_TAGS = [
+    "Vegan",
+    "Vegetarian",
+    "Gluten-Free",
+    "Dairy-Free",
+    "Nut-Free",
   ];
 
   useEffect(() => {
@@ -64,14 +73,31 @@ export default function Menu() {
     };
   }, []);
 
-  const visibleProducts = selectedCategory
-    ? products.filter(
-        (product) =>
-          String(product.category ?? "")
-            .trim()
-            .toLowerCase() === selectedCategory,
-      )
-    : products;
+  const visibleProducts = products.filter((product) => {
+    const matchesCategory =
+      !selectedCategory ||
+      String(product.category ?? "")
+        .trim()
+        .toLowerCase() === selectedCategory;
+
+    const productTags = Array.isArray(product.dietary_tags)
+      ? product.dietary_tags
+      : [];
+
+    const matchesDietaryTags = selectedDietaryTags.every((tag) =>
+      productTags.includes(tag),
+    );
+
+    return matchesCategory && matchesDietaryTags;
+  });
+
+  const toggleDietaryTag = (tag) => {
+    setSelectedDietaryTags((currentTags) =>
+      currentTags.includes(tag)
+        ? currentTags.filter((currentTag) => currentTag !== tag)
+        : [...currentTags, tag],
+    );
+  };
 
   return (
     <main className="menu-page">
@@ -92,7 +118,7 @@ export default function Menu() {
 
       {!isLoading && !errorMessage && products.length > 0 && (
         <div className="menu-content">
-          <aside className="menu-filters" aria-label="Filter menu by category">
+          <aside className="menu-filters" aria-label="Menu filters">
             <h2>Categories</h2>
 
             <div className="menu-filter-options">
@@ -117,8 +143,35 @@ export default function Menu() {
               onClick={() => setSelectedCategory(null)}
               disabled={!selectedCategory}
             >
-              Clear filter
+              Clear category
             </button>
+
+            <fieldset className="menu-dietary-filter">
+              <legend>Dietary tags</legend>
+
+              <div className="menu-dietary-filter-options">
+                {DIETARY_TAGS.map((tag) => (
+                  <label className="menu-dietary-filter-option" key={tag}>
+                    <input
+                      type="checkbox"
+                      value={tag}
+                      checked={selectedDietaryTags.includes(tag)}
+                      onChange={() => toggleDietaryTag(tag)}
+                    />
+                    {tag}
+                  </label>
+                ))}
+              </div>
+
+              <button
+                className="menu-filter-clear"
+                type="button"
+                onClick={() => setSelectedDietaryTags([])}
+                disabled={selectedDietaryTags.length === 0}
+              >
+                Clear dietary tags
+              </button>
+            </fieldset>
           </aside>
 
           <section className="menu-product-list" aria-label="Café products">
@@ -164,6 +217,12 @@ export default function Menu() {
                 </div>
               </article>
             ))}
+
+            {visibleProducts.length === 0 && (
+              <p className="menu-message">
+                No products match the selected filters.
+              </p>
+            )}
           </section>
         </div>
       )}

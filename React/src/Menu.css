@@ -64,6 +64,35 @@
   cursor: not-allowed;
 }
 
+.menu-dietary-filter {
+  min-width: 0;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.menu-dietary-filter legend {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.menu-dietary-filter-options {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.menu-dietary-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+.menu-dietary-filter-option input {
+  margin: 0;
+}
+
 .menu-message {
   margin-top: 1.5rem;
 }

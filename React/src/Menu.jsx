@@ -7,6 +7,15 @@ export default function Menu() {
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const CATEGORY_ORDER = [
+    "breakfast & brunch",
+    "lunch & sandwiches",
+    "pastries & baked goods",
+    "cakes & desserts",
+    "hot drinks",
+    "cold drinks",
+  ];
+
   useEffect(() => {
     let isMounted = true;
 
@@ -15,7 +24,24 @@ export default function Menu() {
         const data = await menuGet();
 
         if (isMounted) {
-          setProducts(data.products);
+          const orderedProducts = [...data.products].sort((a, b) => {
+            const aCategory = String(a.category ?? "")
+              .trim()
+              .toLowerCase();
+            const bCategory = String(b.category ?? "")
+              .trim()
+              .toLowerCase();
+
+            const aOrder = CATEGORY_ORDER.indexOf(aCategory);
+            const bOrder = CATEGORY_ORDER.indexOf(bCategory);
+
+            return (
+              (aOrder === -1 ? CATEGORY_ORDER.length : aOrder) -
+              (bOrder === -1 ? CATEGORY_ORDER.length : bOrder)
+            );
+          });
+
+          setProducts(orderedProducts);
           setErrorMessage("");
         }
       } catch (error) {

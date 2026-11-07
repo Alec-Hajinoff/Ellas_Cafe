@@ -26,7 +26,7 @@ export default function Menu() {
         const data = await menuGet();
 
         if (isMounted) {
-          const orderedProducts = [...data.products].sort((a, b) => {
+          const displayedProducts = [...data.products].sort((a, b) => {
             const aCategory = String(a.category ?? "")
               .trim()
               .toLowerCase();
@@ -43,7 +43,7 @@ export default function Menu() {
             );
           });
 
-          setProducts(orderedProducts);
+          setProducts(displayedProducts);
           setErrorMessage("");
         }
       } catch (error) {

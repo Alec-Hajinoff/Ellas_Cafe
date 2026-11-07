@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { adminExists } from "./ApiService";
-import blue from "./Images/Rasa_Hair_Studio_Logo.svg";
+import blue from "./Images/Ellas_Cafe_Logo.svg";
 import LogoutComponent from "./LogoutComponent";
 import "./Header.css";
 
@@ -42,8 +42,8 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
               <img
                 id="logo"
                 src={blue}
-                alt="Rasa Hair Studio Logo"
-                title="Rasa Hair Studio"
+                alt="Ellas Cafe Logo"
+                title="Ellas Cafe Logo"
               />
             </Link>
           </div>

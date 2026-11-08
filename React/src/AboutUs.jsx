@@ -10,11 +10,9 @@ function AboutUs() {
         <div className="container">
           <div className="row justify-content-center">
             <div>
-              <h1 className="about-us-hero-headline">Roots in the Community</h1>
-              <p className="services-hero-subheadline">
-                Discover our professional hair services, tailored to your style
-                and designed to help you look and feel your best.
-              </p>
+              <h1 className="about-us-hero-headline">
+                A neighbourhood café with a lot to offer
+              </h1>
             </div>
           </div>
         </div>

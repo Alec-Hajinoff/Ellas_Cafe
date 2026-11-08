@@ -3,10 +3,10 @@ import "./WhyChooseUs.css";
 
 function WhyChooseUs() {
   const reasons = [
-    "Personalised hair care tailored to you",
-    "Professional service and attention to detail",
-    "High-quality products and treatments",
-    "Dedicated to helping you look and feel your best",
+    "Independent business",
+    "Community-focused",
+    "Quality ingredients",
+    "Ethical sourcing",
   ];
 
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "./HeroSection";
+import FeaturedProducts from "./FeaturedProducts";
 
 import WhyChooseUs from "./WhyChooseUs";
 import TestimonialCarousel from "./TestimonialCarousel";
@@ -15,6 +16,9 @@ function MainComponent({ isAuthenticated, userRole, isLoading }) {
           userRole={userRole}
           isLoading={isLoading}
         />
+      </div>
+      <div className="container">
+        <FeaturedProducts />
       </div>
 
       <div className="container">

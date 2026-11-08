@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { menuGet } from "./ApiService";
 import "./FeaturedProducts.css";
+import { Link } from "react-router-dom";
 
 export default function FeaturedProducts() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -114,6 +115,12 @@ export default function FeaturedProducts() {
           ))}
         </div>
       )}
+
+      <div className="text-center mt-4">
+        <Link className="btn btn-primary" to="/Menu">
+          View Full Menu
+        </Link>
+      </div>
     </section>
   );
 }

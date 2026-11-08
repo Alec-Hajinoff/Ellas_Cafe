@@ -93,7 +93,21 @@ export default function FeaturedProducts() {
                     </span>
                   </div>
 
-                  {product.description && <p>{product.description}</p>}
+                  <p className="featured-product-category">
+                    {product.category}
+                  </p>
+
+                  {Array.isArray(product.dietary_tags) &&
+                    product.dietary_tags.length > 0 && (
+                      <ul
+                        className="featured-product-tags"
+                        aria-label="Dietary tags"
+                      >
+                        {product.dietary_tags.map((tag) => (
+                          <li key={tag}>{tag}</li>
+                        ))}
+                      </ul>
+                    )}
                 </div>
               </article>
             </div>

@@ -67,3 +67,25 @@
 .featured-products-error {
   color: #a12222;
 }
+
+.featured-product-category {
+  margin: 0.5rem 0 0;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.featured-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featured-product-tags li {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}

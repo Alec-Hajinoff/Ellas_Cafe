@@ -13,12 +13,6 @@
   border-radius: var(--radius-md, 6px);
 }
 
-@media (min-width: 992px) {
-  .about-us-hero-wrapper {
-    height: 320px;
-  }
-}
-
 .about-us-hero-headline {
   font-size: var(--font-size-2xl, 2rem);
   color: var(--color-text-inverse, #ffffff);

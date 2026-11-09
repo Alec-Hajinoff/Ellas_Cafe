@@ -1,7 +1,7 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import FeaturedProducts from "./FeaturedProducts";
-
+import CafeImages from "./CafeImages";
 import WhyChooseUs from "./WhyChooseUs";
 import TestimonialCarousel from "./TestimonialCarousel";
 
@@ -20,7 +20,9 @@ function MainComponent({ isAuthenticated, userRole, isLoading }) {
       <div className="container">
         <FeaturedProducts />
       </div>
-
+      <div className="container">
+        <CafeImages />
+      </div>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-md-11 col-lg-10 mx-auto">

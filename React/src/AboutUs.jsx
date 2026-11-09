@@ -1,5 +1,6 @@
 import React from "react";
 import AboutUsStory from "./AboutUsStory";
+import CafeImages from "./CafeImages";
 
 import "./AboutUs.css";
 
@@ -22,6 +23,7 @@ function AboutUs() {
         <div className="row justify-content-center">
           <div className="col-12 col-md-11 col-lg-10 mx-auto">
             <AboutUsStory />
+            <CafeImages />
           </div>
         </div>
       </div>

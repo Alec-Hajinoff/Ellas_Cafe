@@ -56,7 +56,7 @@ function WhyChooseUs() {
                   </svg>
                   <div className="contact-us-content">
                     <span className="contact-us-value">
-                      2 Chaseville Parade, Chaseville Park Rd, London N21 1PG
+                      Ellas Café, 705 Green Lanes, London, N21 3RS
                     </span>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ function WhyChooseUs() {
                       href="mailto:info@lovedayauto.com"
                       className="contact-us-value"
                     >
-                      style@rasalstudio.com
+                      contact@ellascafe.co.uk
                     </a>
                   </div>
                 </div>

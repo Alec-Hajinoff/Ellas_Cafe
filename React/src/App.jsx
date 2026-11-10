@@ -46,11 +46,7 @@ function AppContent() {
       <NavigationBar isAuthenticated={isAuthenticated} userRole={userRole} />
 
       <main className="app-main-content">
-        <AppRoutes
-          isAuthenticated={isAuthenticated}
-          userRole={userRole}
-          isLoading={isLoading}
-        />
+        <AppRoutes />
       </main>
 
       <Footer />

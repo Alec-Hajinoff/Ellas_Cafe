@@ -9,10 +9,9 @@ import AdminDashboard from "./AdminDashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import UserLogin from "./UserLogin";
 import UserRegistration from "./UserRegistration";
-
 import AboutUs from "./AboutUs";
 
-export default function AppRoutes({ isAuthenticated }) {
+export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<MainRegLog />} />

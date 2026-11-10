@@ -8,15 +8,11 @@ import Map from "./Map";
 
 import "./MainComponent.css";
 
-function MainComponent({ isAuthenticated, userRole, isLoading }) {
+function MainComponent() {
   return (
     <div className="overflow-hidden">
       <div>
-        <HeroSection
-          isAuthenticated={isAuthenticated}
-          userRole={userRole}
-          isLoading={isLoading}
-        />
+        <HeroSection />
       </div>
       <div className="container">
         <FeaturedProducts />
@@ -34,7 +30,6 @@ function MainComponent({ isAuthenticated, userRole, isLoading }) {
               <div>
                 <Map />
               </div>
-
               <div>
                 <TestimonialCarousel />
               </div>

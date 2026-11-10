@@ -1,0 +1,16 @@
+.cafe-map {
+  margin-block: 2rem;
+}
+
+.cafe-map__frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.cafe-map__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

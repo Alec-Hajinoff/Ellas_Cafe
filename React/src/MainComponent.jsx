@@ -4,6 +4,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import CafeImages from "./CafeImages";
 import WhyChooseUs from "./WhyChooseUs";
 import TestimonialCarousel from "./TestimonialCarousel";
+import Map from "./Map";
 
 import "./MainComponent.css";
 
@@ -29,6 +30,9 @@ function MainComponent({ isAuthenticated, userRole, isLoading }) {
             <div className="main-container">
               <div>
                 <WhyChooseUs />
+              </div>
+              <div>
+                <Map />
               </div>
 
               <div>

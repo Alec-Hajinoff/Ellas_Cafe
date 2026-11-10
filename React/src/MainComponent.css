@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .main-container {
   margin-block: 2rem;
+}
+
+#cafe-map {
+  scroll-margin-top: 1rem;
 }

@@ -10,6 +10,10 @@ function HeroSection() {
               <h1 className="hero-heading">
                 Artisan Coffee & Fresh Food in Winchmore Hill.
               </h1>
+
+              <a className="hero-find-us-button" href="#cafe-map">
+                Find us
+              </a>
             </div>
           </div>
         </div>

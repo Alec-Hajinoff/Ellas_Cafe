@@ -43,8 +43,6 @@ function AppContent() {
         onLogoutComplete={verifySession}
       />
 
-      <NavigationBar isAuthenticated={isAuthenticated} userRole={userRole} />
-
       <main className="app-main-content">
         <AppRoutes />
       </main>

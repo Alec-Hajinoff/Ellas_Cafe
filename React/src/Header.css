@@ -6,8 +6,6 @@
 .header-wrapper {
   background-color: var(--color-espresso);
   padding: 0.5rem 0;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
 }
 
 .header-account-actions {
@@ -80,6 +78,10 @@
 
 @media (max-width: 767.98px) {
   .header-account-actions {
+    justify-content: flex-start;
+  }
+
+  .header-auth-links {
     justify-content: flex-start;
   }
 }

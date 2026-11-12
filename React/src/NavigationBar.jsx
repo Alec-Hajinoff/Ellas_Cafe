@@ -38,12 +38,14 @@ function NavigationBar({ isAuthenticated }) {
         About Us
       </Link>
 
-      <Link
-        to={targetDashboardPath}
-        className={`nav-bar-link ${isDashboardActive ? "active" : ""}`}
-      >
-        Dashboard
-      </Link>
+      {isAuthenticated && (
+        <Link
+          to={targetDashboardPath}
+          className={`nav-bar-link ${isDashboardActive ? "active" : ""}`}
+        >
+          Dashboard
+        </Link>
+      )}
     </nav>
   );
 }

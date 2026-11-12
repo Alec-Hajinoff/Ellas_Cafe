@@ -48,6 +48,7 @@
   --color-border-input: #b7a493; /* Warm Stone */
 
   /* --- Text colors --- */
+  --color-logo-cream: #f8ebdb; /* Creamy ivory of logo text */
   --color-text-main: #292522; /* Palette document: interface text */
   --color-text-muted: #625950; /* Added muted text color for readable secondary copy */
   --color-text-inverse: #ffffff; /* White text on burgundy or espresso backgrounds */
@@ -61,7 +62,7 @@
   --color-danger-bg: #f1e5e8; /* Pale burgundy status surface */
 
   /* Palette colors available for decorative accents. */
-  --color-header-bg: #000000;
+  --color-header-bg: #000000; /* Black header background */
   --color-espresso: #191817; /* Midnight Espresso */
   --color-ivory: #f4ede2; /* Greek Ivory */
   --color-burgundy: #702d40; /* Aegean Burgundy */

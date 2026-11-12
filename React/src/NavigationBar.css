@@ -8,7 +8,7 @@
 }
 
 .nav-bar-link {
-  color: var(--color-text-inverse);
+  color: var(--color-surface-bg);
   text-decoration: none;
 }
 

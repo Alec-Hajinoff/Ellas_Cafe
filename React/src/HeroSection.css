@@ -1,7 +1,5 @@
 .hero-section-wrapper {
-  background:
-    linear-gradient(rgba(11, 98, 245, 0.3), rgba(11, 98, 245, 0.5)),
-    url("./Images/Hero.webp") no-repeat center center;
+  background: url("./Images/Hero.webp") no-repeat center center;
   background-size: cover;
   height: 500px;
   width: 100%;

@@ -61,6 +61,7 @@
   --color-danger-bg: #f1e5e8; /* Pale burgundy status surface */
 
   /* Palette colors available for decorative accents. */
+  --color-header-bg: #000000;
   --color-espresso: #191817; /* Midnight Espresso */
   --color-ivory: #f4ede2; /* Greek Ivory */
   --color-burgundy: #702d40; /* Aegean Burgundy */

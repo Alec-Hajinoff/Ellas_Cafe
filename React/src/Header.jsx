@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { adminExists } from "./ApiService";
-import blue from "./Images/Ellas_Cafe_Logo.svg";
+import blue from "./Images/Ellas_Cafe_Logo.webp";
 import LogoutComponent from "./LogoutComponent";
 import NavigationBar from "./NavigationBar";
 import "./Header.css";

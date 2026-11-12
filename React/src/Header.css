@@ -1,10 +1,9 @@
 #logo {
-  width: 200px;
-  padding: 0.5rem 0 0 0;
+  width: 150px;
 }
 
 .header-wrapper {
-  background-color: var(--color-espresso);
+  background-color: var(--color-header-bg);
   padding: 0.5rem 0;
 }
 

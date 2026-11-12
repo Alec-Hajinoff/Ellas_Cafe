@@ -81,10 +81,6 @@
 
 @media (max-width: 767.98px) {
   .header-account-actions {
-    justify-content: flex-start;
-  }
-
-  .header-auth-links {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 }

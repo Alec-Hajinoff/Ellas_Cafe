@@ -23,8 +23,10 @@
 }
 
 .header-wrapper .header-btn-ghost {
+  background-color: var(--color-primary);
+  color: var(--color-surface-bg);
   background: transparent;
-  color: var(--color-text-inverse);
+
   border: 1px solid rgba(255, 255, 255, 0.4);
   height: 40px;
   border-radius: var(--radius-pill);
@@ -43,16 +45,18 @@
 
 .header-wrapper .header-btn-ghost:hover,
 .header-wrapper .header-btn-ghost.active {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-primary);
   border-color: var(--color-text-inverse);
-  color: var(--color-text-inverse);
+  color: var(--color-surface-bg);
   text-decoration: none;
 }
 
 .header-wrapper .header-btn-signup {
   background-color: var(--color-primary);
-  color: var(--color-text-main);
-  border: 1px solid transparent;
+  color: var(--color-surface-bg);
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
   height: 40px;
   border-radius: var(--radius-pill);
   display: inline-flex;
@@ -60,18 +64,18 @@
   justify-content: center;
   padding: 0 1.5rem;
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
   cursor: pointer;
   transition:
     background-color var(--transition-fast),
-    transform var(--transition-fast);
+    border-color var(--transition-fast);
 }
 
 .header-wrapper .header-btn-signup:hover,
 .header-wrapper .header-btn-signup.active {
-  background-color: var(--color-primary-shade);
-  color: var(--color-text-main);
+  background-color: var(--color-primary);
+  color: var(--color-surface-bg);
   text-decoration: none;
 }
 

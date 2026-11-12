@@ -38,7 +38,7 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
     <header className="header-wrapper">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-12 col-md-3 mb-3 mb-md-0">
+          <div className="col-8 col-md-3 mb-3 mb-md-0 order-1">
             <Link to="/">
               <img
                 id="logo"
@@ -49,11 +49,11 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
             </Link>
           </div>
 
-          <div className="col-12 col-md-6 mb-3 mb-md-0">
+          <div className="col-12 col-md-6 mb-3 mb-md-0 order-3 order-md-2">
             <NavigationBar isAuthenticated={isAuthenticated} />
           </div>
 
-          <div className="col-12 col-md-3">
+          <div className="col-4 col-md-3 order-2 order-md-3">
             <div className="header-account-actions">
               {!isLoading &&
                 (isAuthenticated ? (

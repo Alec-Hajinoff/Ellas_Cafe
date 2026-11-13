@@ -20,7 +20,7 @@ function CafeImages() {
       aria-labelledby="cafe-images-heading"
     >
       <h2 id="cafe-images-heading" className="cafe-images-tagline">
-        A Place To Relax, Work &amp; Enjoy Great Coffee
+        A place to relax, work &amp; enjoy great coffee
       </h2>
 
       <div className="row g-3">

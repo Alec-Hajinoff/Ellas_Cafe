@@ -40,9 +40,9 @@ function TestimonialCarousel() {
   const reviews = reviewData.reviews || [];
 
   return (
-    <section className="testimonial-section py-4">
+    <section className="testimonial-section">
       <div className="text-center mb-4">
-        <h2 className="testimonial-section-title">What Our Customers Say</h2>
+        <h2 className="testimonial-section-title">What our customers say</h2>
 
         {reviewData.rating !== null && (
           <p className="testimonial-business-rating">

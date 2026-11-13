@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Carousel } from "bootstrap";
 import { testimonialCarousel } from "./ApiService";
 import "./TestimonialCarousel.css";
 
@@ -38,6 +39,20 @@ function TestimonialCarousel() {
   }, []);
 
   const reviews = reviewData.reviews || [];
+
+  useEffect(() => {
+    if (reviews.length < 2) return;
+
+    const element = document.getElementById("googleTestimonialCarousel");
+    if (!element) return;
+
+    const carousel = Carousel.getOrCreateInstance(element, {
+      interval: 3000,
+      ride: "carousel",
+    });
+
+    return () => carousel.dispose();
+  }, [reviews.length]);
 
   return (
     <section className="testimonial-section">
@@ -86,8 +101,6 @@ function TestimonialCarousel() {
         <div
           id="googleTestimonialCarousel"
           className="carousel slide testimonial-carousel-container"
-          data-bs-ride={reviews.length > 1 ? "carousel" : undefined}
-          data-bs-interval="3000"
         >
           <div className="carousel-inner">
             {reviews.map((item, index) => (

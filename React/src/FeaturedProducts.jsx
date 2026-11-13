@@ -69,9 +69,12 @@ export default function FeaturedProducts() {
       )}
 
       {!isLoading && !errorMessage && featuredProducts.length > 0 && (
-        <div className="row g-4">
+        <div className="featured-products-row row g-4">
           {featuredProducts.map((product) => (
-            <div className="col-12 col-sm-6 col-lg-3" key={product.id}>
+            <div
+              className="featured-products-item col-12 col-sm-6 col-lg-3"
+              key={product.id}
+            >
               <article className="featured-product-card h-100">
                 {product.image_path ? (
                   <img

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CafeImages.css";
 
 import baristaExperience from "./Images/Cafe_images/Barista_Experience.webp";
@@ -34,6 +35,12 @@ function CafeImages() {
             />
           </div>
         ))}
+      </div>
+
+      <div className="text-center mt-4">
+        <Link className="cafe-images-about-button" to="/AboutUs">
+          Out Story
+        </Link>
       </div>
     </section>
   );

@@ -87,7 +87,7 @@ function TestimonialCarousel() {
           id="googleTestimonialCarousel"
           className="carousel slide testimonial-carousel-container"
           data-bs-ride={reviews.length > 1 ? "carousel" : undefined}
-          data-bs-interval="5000"
+          data-bs-interval="3000"
         >
           <div className="carousel-inner">
             {reviews.map((item, index) => (

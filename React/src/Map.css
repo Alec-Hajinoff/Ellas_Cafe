@@ -1,6 +1,6 @@
 .cafe-map {
   width: 100%;
-  margin-block: 2rem;
+  margin-block: 1rem;
   padding-inline: 1rem;
 }
 
@@ -88,6 +88,14 @@ a.cafe-map__contact-value:hover {
   height: 100%;
   min-height: 24rem;
   border: 0;
+}
+
+.cafe-map__title {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-main);
+
+  font-weight: var(--font-weight-bold);
+  text-align: center;
 }
 
 @media (max-width: 767.98px) {

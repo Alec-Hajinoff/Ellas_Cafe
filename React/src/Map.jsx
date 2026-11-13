@@ -8,6 +8,7 @@ function Map() {
       className="cafe-map"
       aria-label="Cafe location and contact details"
     >
+      <h2 className="cafe-map__title">Where to find us</h2>
       <div className="cafe-map__layout">
         <article className="cafe-map__contact-card">
           <h2 className="cafe-map__heading">Contact Us</h2>

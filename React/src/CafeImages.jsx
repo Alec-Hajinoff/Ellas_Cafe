@@ -24,9 +24,12 @@ function CafeImages() {
         A place to relax, work &amp; enjoy great coffee
       </h2>
 
-      <div className="row g-3">
+      <div className="cafe-images-row row g-3">
         {cafeImages.map((image) => (
-          <div className="col-12 col-sm-6 col-lg-3" key={image.src}>
+          <div
+            className="cafe-images-item col-12 col-sm-6 col-lg-3"
+            key={image.src}
+          >
             <img
               className="cafe-gallery-image"
               src={image.src}

@@ -108,10 +108,12 @@ function TestimonialCarousel() {
                     )}
                   </div>
 
-                  <p className="testimonial-text mb-4">
-                    {item.text ||
-                      "This reviewer did not leave written feedback."}
-                  </p>
+                  <div className="testimonial-copy">
+                    <p className="testimonial-text">
+                      {item.text ||
+                        "This reviewer did not leave written feedback."}
+                    </p>
+                  </div>
 
                   <div className="testimonial-author-info">
                     {item.authorPhotoUri && (

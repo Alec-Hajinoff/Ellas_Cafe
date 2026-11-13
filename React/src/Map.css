@@ -28,13 +28,6 @@
   box-shadow: var(--shadow-md);
 }
 
-.cafe-map__heading {
-  margin: 0 0 1.5rem;
-  color: var(--color-text-main);
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-}
-
 .cafe-map__contact-list {
   display: flex;
   flex-direction: column;

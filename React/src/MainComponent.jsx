@@ -2,7 +2,6 @@ import React from "react";
 import HeroSection from "./HeroSection";
 import FeaturedProducts from "./FeaturedProducts";
 import CafeImages from "./CafeImages";
-import WhyChooseUs from "./WhyChooseUs";
 import TestimonialCarousel from "./TestimonialCarousel";
 import Map from "./Map";
 
@@ -28,9 +27,6 @@ function MainComponent() {
                 <TestimonialCarousel />
               </div>
 
-              <div>
-                <WhyChooseUs />
-              </div>
               <div>
                 <Map />
               </div>

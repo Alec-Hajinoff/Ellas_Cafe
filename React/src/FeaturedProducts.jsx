@@ -47,7 +47,7 @@ export default function FeaturedProducts() {
       aria-labelledby="featured-products-heading"
     >
       <div className="featured-products-heading">
-        <h2 id="featured-products-heading">A taste of Ella’s</h2>
+        <h2 id="featured-products-heading">A taste of Ellas</h2>
         <p>Some café favourites, chosen for you.</p>
       </div>
 
@@ -118,7 +118,7 @@ export default function FeaturedProducts() {
 
       <div className="text-center mt-4">
         <Link className="btn btn-primary" to="/Menu">
-          View Full Menu
+          View Our Menu
         </Link>
       </div>
     </section>

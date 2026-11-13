@@ -20,12 +20,10 @@ function MainComponent() {
         <CafeImages />
       </div>
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row">
           <div className="col-12 col-md-11 col-lg-9 mx-auto">
             <div className="main-container">
-              <div>
-                <TestimonialCarousel />
-              </div>
+              <TestimonialCarousel />
             </div>
           </div>
         </div>

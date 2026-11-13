@@ -1,16 +1,118 @@
 .cafe-map {
+  width: 100%;
   margin-block: 2rem;
+  padding-inline: 1rem;
+}
+
+.cafe-map__layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "map contact";
+  align-items: stretch;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cafe-map__contact-card {
+  grid-area: contact;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.cafe-map__heading {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-main);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.cafe-map__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cafe-map__contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cafe-map__contact-icon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.15rem;
+  color: var(--color-complementary);
+}
+
+.cafe-map__contact-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cafe-map__contact-value {
+  color: var(--color-text-main);
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+a.cafe-map__contact-value:hover {
+  color: var(--color-complementary);
 }
 
 .cafe-map__frame {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  grid-area: map;
+  min-height: 24rem;
   overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .cafe-map__frame iframe {
   display: block;
   width: 100%;
   height: 100%;
+  min-height: 24rem;
   border: 0;
+}
+
+@media (max-width: 767.98px) {
+  .cafe-map {
+    padding-inline: 1rem;
+  }
+
+  .cafe-map__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "contact"
+      "map";
+    gap: 1rem;
+  }
+
+  .cafe-map__contact-card {
+    padding: 1.75rem;
+  }
+
+  .cafe-map__contact-list {
+    gap: 1.25rem;
+  }
+
+  .cafe-map__frame,
+  .cafe-map__frame iframe {
+    min-height: 20rem;
+  }
 }

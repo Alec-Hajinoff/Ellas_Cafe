@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./HeroSection.css";
 
 function HeroSection() {
@@ -8,12 +9,17 @@ function HeroSection() {
           <div className="col-12 col-lg-4">
             <div className="hero-content">
               <h1 className="hero-heading">
-                Artisan Coffee & Fresh Food in Winchmore Hill.
+                Artisan Coffee &amp; Fresh Food in Winchmore Hill.
               </h1>
 
-              <a className="hero-find-us-button" href="#cafe-map">
-                Find us
-              </a>
+              <div className="hero-actions">
+                <Link className="hero-menu-button" to="/Menu">
+                  View Our Menu
+                </Link>
+                <a className="hero-find-us-button" href="#cafe-map">
+                  Find us
+                </a>
+              </div>
             </div>
           </div>
         </div>

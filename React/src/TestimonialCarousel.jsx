@@ -47,7 +47,7 @@ function TestimonialCarousel() {
     if (!element) return;
 
     const carousel = Carousel.getOrCreateInstance(element, {
-      interval: 3000,
+      interval: 5000,
       ride: "carousel",
     });
 

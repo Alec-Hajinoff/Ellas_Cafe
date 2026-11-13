@@ -91,7 +91,7 @@ a.cafe-map__contact-value:hover {
   text-align: center;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1200px) {
   .cafe-map {
     padding-inline: 1rem;
   }

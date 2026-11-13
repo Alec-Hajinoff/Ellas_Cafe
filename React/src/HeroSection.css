@@ -11,7 +11,7 @@
 }
 
 .hero-content {
-  max-width: 720px;
+  max-width: 500px;
 }
 
 .hero-heading {
@@ -39,18 +39,17 @@
   text-decoration: underline;
 }
 
-@media (max-width: 767.98px) {
-  .hero-content {
-    background-color: rgba(244, 237, 226, 0.3);
-    padding: 1rem;
-    border-radius: var(--radius-md, 10px);
-  }
-}
-
 @media (max-width: 991.98px) {
   .hero-content {
-    background-color: rgba(244, 237, 226, 0.3);
-    padding: 1rem;
-    border-radius: var(--radius-md, 10px);
+    background: radial-gradient(
+      ellipse at center,
+      rgba(244, 237, 226, 0.65) 0%,
+      rgba(244, 237, 226, 0.35) 50%,
+      rgba(244, 237, 226, 0) 80%
+    );
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 2rem;
+    border-radius: 0;
   }
 }

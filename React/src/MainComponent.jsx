@@ -21,18 +21,17 @@ function MainComponent() {
       </div>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-12 col-md-11 col-lg-10 mx-auto">
+          <div className="col-12 col-md-11 col-lg-9 mx-auto">
             <div className="main-container">
               <div>
                 <TestimonialCarousel />
               </div>
-
-              <div>
-                <Map />
-              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="container">
+        <Map />
       </div>
     </div>
   );

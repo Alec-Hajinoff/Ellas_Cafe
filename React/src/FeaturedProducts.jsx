@@ -117,7 +117,7 @@ export default function FeaturedProducts() {
       )}
 
       <div className="text-center mt-4">
-        <Link className="btn btn-primary" to="/Menu">
+        <Link className="featured-products-menu-button" to="/Menu">
           View Our Menu
         </Link>
       </div>

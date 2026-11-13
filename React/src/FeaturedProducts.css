@@ -89,3 +89,18 @@
   border-radius: 999px;
   font-size: 0.8rem;
 }
+
+.featured-products-menu-button {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-md, 6px);
+  font-weight: var(--font-weight-bold, 700);
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-surface-bg);
+}
+
+.featured-products-menu-button:hover,
+.featured-products-menu-button:focus-visible {
+  text-decoration: underline;
+}

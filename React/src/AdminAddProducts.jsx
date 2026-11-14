@@ -250,7 +250,7 @@ function AdminAddProducts({ onProductAdded }) {
             accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp"
             onChange={updateImage}
           />
-          <p>
+          <p className="product-image-guidelines">
             {" "}
             <strong>Product image guidelines:</strong> Square image (1:1 ratio)
             *** Recommended size: 1000 x 1000 pixels *** Product centred and

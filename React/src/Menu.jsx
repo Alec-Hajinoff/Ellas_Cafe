@@ -11,12 +11,12 @@ export default function Menu() {
   const [selectedDietaryTags, setSelectedDietaryTags] = useState([]);
 
   const CATEGORY_ORDER = [
-    "breakfast & brunch",
-    "lunch & sandwiches",
-    "pastries & baked goods",
-    "cakes & desserts",
-    "hot drinks",
-    "cold drinks",
+    "Breakfast & brunch",
+    "Lunch & sandwiches",
+    "Pastries & baked goods",
+    "Cakes & desserts",
+    "Hot drinks",
+    "Cold drinks",
   ];
 
   const DIETARY_TAGS = [
@@ -118,7 +118,7 @@ export default function Menu() {
       {!isLoading && !errorMessage && products.length > 0 && (
         <div className="menu-content">
           <aside className="menu-filters" aria-label="Menu filters">
-            <h2>Categories</h2>
+            <legend>Categories</legend>
 
             <div className="menu-filter-options">
               {CATEGORY_ORDER.map((category) => (

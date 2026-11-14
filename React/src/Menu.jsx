@@ -101,8 +101,7 @@ export default function Menu() {
 
   return (
     <main className="menu-page">
-      <h1>Our Menu</h1>
-      <p>Explore our café menu.</p>
+      <h2>Explore our café menu</h2>
 
       {isLoading && <p role="status">Loading menu…</p>}
 

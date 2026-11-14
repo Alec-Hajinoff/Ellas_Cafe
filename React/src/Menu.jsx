@@ -36,12 +36,8 @@ export default function Menu() {
 
         if (isMounted) {
           const displayedProducts = [...data.products].sort((a, b) => {
-            const aCategory = String(a.category ?? "")
-              .trim()
-              .toLowerCase();
-            const bCategory = String(b.category ?? "")
-              .trim()
-              .toLowerCase();
+            const aCategory = String(a.category ?? "").trim();
+            const bCategory = String(b.category ?? "").trim();
 
             const aOrder = CATEGORY_ORDER.indexOf(aCategory);
             const bOrder = CATEGORY_ORDER.indexOf(bCategory);
@@ -76,9 +72,7 @@ export default function Menu() {
   const visibleProducts = products.filter((product) => {
     const matchesCategory =
       !selectedCategory ||
-      String(product.category ?? "")
-        .trim()
-        .toLowerCase() === selectedCategory;
+      String(product.category ?? "").trim() === selectedCategory;
 
     const productTags = Array.isArray(product.dietary_tags)
       ? product.dietary_tags

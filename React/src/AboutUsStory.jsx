@@ -15,33 +15,31 @@ function AboutUsStory() {
         <div className="story-column story-column-left">
           <section className="story-intro" aria-label="About Ellas Café">
             <div className="story-image-copy story-intro-content">
-              <div>
-                <p className="story-text">
-                  At Ellas Café, we believe that the best moments in life are
-                  often shared over a good cup of coffee and something delicious
-                  to eat.
-                </p>
-
-                <p className="story-text">
-                  Created with a passion for great coffee, quality food and
-                  genuine hospitality, Ellas Café was founded to bring something
-                  special to the local community. We wanted to create more than
-                  just somewhere to grab a coffee – a welcoming space where
-                  people could meet friends, enjoy a quiet moment, catch up over
-                  breakfast or simply make a little time for themselves.
-                </p>
-
-                <p className="story-text story-signoff">
-                  We're here to serve our community, one cup at a time.
-                </p>
-              </div>
-
               <img
                 className="story-image story-image-barista"
                 src={baristaExperience}
                 alt="A barista preparing a coffee"
                 loading="lazy"
               />
+
+              <p className="story-text">
+                At Ellas Café, we believe that the best moments in life are
+                often shared over a good cup of coffee and something delicious
+                to eat.
+              </p>
+
+              <p className="story-text">
+                Created with a passion for great coffee, quality food and
+                genuine hospitality, Ellas Café was founded to bring something
+                special to the local community. We wanted to create more than
+                just somewhere to grab a coffee – a welcoming space where people
+                could meet friends, enjoy a quiet moment, catch up over
+                breakfast or simply make a little time for themselves.
+              </p>
+
+              <p className="story-text story-signoff">
+                We're here to serve our community, one cup at a time.
+              </p>
             </div>
           </section>
 
@@ -57,44 +55,43 @@ function AboutUsStory() {
             </p>
 
             <div className="story-image-copy story-coffee-content">
-              <div>
-                <p className="story-text">
-                  We believe that a really good cup of coffee is about more than
-                  just the final brew. It starts with carefully selected beans,
-                  thoughtful sourcing and an appreciation for the people and
-                  processes behind every cup.
-                </p>
-
-                <p className="story-text">
-                  We aim to bring together quality coffee beans from established
-                  growing regions, working with trusted coffee suppliers and
-                  roasting partners who share our commitment to flavour,
-                  consistency and quality.
-                </p>
-              </div>
-
               <img
                 className="story-image story-image-pastries"
                 src={coffeePastries}
                 alt="Coffee and pastries served at Ellas Café"
                 loading="lazy"
               />
+
+              <p className="story-text">
+                We believe that a really good cup of coffee is about more than
+                just the final brew. It starts with carefully selected beans,
+                thoughtful sourcing and an appreciation for the people and
+                processes behind every cup.
+              </p>
+
+              <p className="story-text">
+                We aim to bring together quality coffee beans from established
+                growing regions, working with trusted coffee suppliers and
+                roasting partners who share our commitment to flavour,
+                consistency and quality.
+              </p>
+
+              <p className="story-text">
+                From the origins of the beans to the skill of the barista, every
+                detail matters. Whether you prefer a smooth flat white, a
+                classic cappuccino, a rich espresso or something a little
+                different, our aim is to serve coffee that you will want to come
+                back for.
+              </p>
+
+              <p className="story-text">
+                We also believe that good coffee should be enjoyed responsibly.
+                We value suppliers who take sustainability seriously, support
+                responsible sourcing practices and recognise the importance of
+                looking after the communities and environments involved in
+                coffee production.
+              </p>
             </div>
-
-            <p className="story-text">
-              From the origins of the beans to the skill of the barista, every
-              detail matters. Whether you prefer a smooth flat white, a classic
-              cappuccino, a rich espresso or something a little different, our
-              aim is to serve coffee that you will want to come back for.
-            </p>
-
-            <p className="story-text">
-              We also believe that good coffee should be enjoyed responsibly. We
-              value suppliers who take sustainability seriously, support
-              responsible sourcing practices and recognise the importance of
-              looking after the communities and environments involved in coffee
-              production.
-            </p>
           </section>
         </div>
 
@@ -159,10 +156,18 @@ function AboutUsStory() {
             className="story-section story-location"
             aria-labelledby="story-location-heading"
           >
-            <div>
-              <h2 id="story-location-heading" className="story-heading">
-                Located on Green Lanes
-              </h2>
+            <h2 id="story-location-heading" className="story-heading">
+              Located on Green Lanes
+            </h2>
+
+            <div className="story-image-copy">
+              <img
+                className="story-image story-image-location"
+                src={cafeSeating}
+                alt="Seating area at Ellas Café"
+                loading="lazy"
+              />
+
               <p className="story-text">
                 Located on Green Lanes in Winchmore Hill, we are proud to be an
                 independent neighbourhood café. Whether you're stopping by on
@@ -170,17 +175,11 @@ function AboutUsStory() {
                 afternoon coffee, we want every visit to feel relaxed, friendly
                 and memorable.
               </p>
+
               <p className="story-text story-signoff">
                 We're here to serve our community, one cup at a time.
               </p>
             </div>
-
-            <img
-              className="story-image story-image-location"
-              src={cafeSeating}
-              alt="Seating area at Ellas Café"
-              loading="lazy"
-            />
           </section>
         </div>
       </div>

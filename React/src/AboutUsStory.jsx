@@ -9,7 +9,7 @@ import coffeePastries from "./Images/Cafe_images/Coffee_Pastries.webp";
 function AboutUsStory() {
   return (
     <article className="story-card">
-      <h1 className="story-title">A neighbourhood café with a lot to offer</h1>
+      <h2 className="story-title">A neighbourhood café with a lot to offer</h2>
 
       <div className="story-layout">
         <div className="story-column story-column-left">

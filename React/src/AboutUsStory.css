@@ -14,7 +14,7 @@
 .story-layout {
   display: grid;
   gap: var(--spacing-xl, 2.5rem);
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .story-column {

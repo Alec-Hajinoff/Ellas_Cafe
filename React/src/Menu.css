@@ -12,6 +12,12 @@
   margin-top: 1.5rem;
 }
 
+.menu-heading {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .menu-filters {
   position: sticky;
   top: 1rem;

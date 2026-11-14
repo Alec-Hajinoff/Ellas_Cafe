@@ -19,7 +19,7 @@
 }
 
 .menu-filters {
-  position: sticky;
+  position: static;
   top: 1rem;
   padding: 1rem;
   border: 1px solid #ddd;

@@ -16,8 +16,7 @@
   margin-bottom: 1.2rem;
 }
 
-.admin-add-products__field label,
-.admin-add-products__fieldset legend {
+.admin-add-products__field label {
   font-weight: 650;
 }
 
@@ -58,7 +57,10 @@
 }
 
 .admin-add-products__fieldset legend {
+  font-size: var(--font-size-md);
+  font-weight: 650;
   margin-bottom: 0.6rem;
+  padding: 0;
 }
 
 .admin-add-products__options {

@@ -118,35 +118,26 @@ function AboutUsStory() {
                 freedom to focus on what matters most: our customers, our
                 products and the quality of every experience.
               </p>
-            </div>
 
-            <div className="story-values-list">
-              <div className="story-value-block">
-                <h3 className="story-value-heading">Part of the Community</h3>
-                <p className="story-text">
-                  We believe cafés bring people together. We want Ellas Café to
-                  be a familiar and welcoming part of Winchmore Hill, where
-                  neighbours, families and visitors feel at home.
-                </p>
-              </div>
+              <h3 className="story-value-heading">Part of the Community</h3>
+              <p className="story-text">
+                We believe cafés bring people together. We want Ellas Café to be
+                a familiar and welcoming part of Winchmore Hill, where
+                neighbours, families and visitors feel at home.
+              </p>
 
-              <div className="story-value-block">
-                <h3 className="story-value-heading">Quality in Every Detail</h3>
-                <p className="story-text">
-                  From our coffee to our food, we believe quality makes all the
-                  difference. We aim to use carefully selected ingredients and
-                  prepare our products with attention and care.
-                </p>
-              </div>
-
-              <div className="story-value-block">
-                <h3 className="story-value-heading">Responsible Sourcing</h3>
-                <p className="story-text">
-                  We appreciate the journey behind the products we serve. We aim
-                  to work with suppliers who value responsible sourcing,
-                  sustainability and the people behind the ingredients.
-                </p>
-              </div>
+              <h3 className="story-value-heading">Quality in Every Detail</h3>
+              <p className="story-text">
+                From our coffee to our food, we believe quality makes all the
+                difference. We aim to use carefully selected ingredients and
+                prepare our products with attention and care.
+              </p>
+              <h3 className="story-value-heading">Responsible Sourcing</h3>
+              <p className="story-text">
+                We appreciate the journey behind the products we serve. We aim
+                to work with suppliers who value responsible sourcing,
+                sustainability and the people behind the ingredients.
+              </p>
             </div>
           </section>
 

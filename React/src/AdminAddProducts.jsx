@@ -147,7 +147,7 @@ function AdminAddProducts({ onProductAdded }) {
       className="admin-add-products"
       aria-labelledby="add-product-heading"
     >
-      <h2 id="add-product-heading">Add a product to your menu</h2>
+      <h2>Add a product to your menu</h2>
 
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="admin-add-products__field">

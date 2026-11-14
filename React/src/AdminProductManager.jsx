@@ -35,7 +35,7 @@ function AdminProductManager({ products, setProducts, isLoading, error }) {
       className="admin-product-manager"
       aria-labelledby="product-manager-title"
     >
-      <h2 id="product-manager-title">Manage Products</h2>
+      <h2 id="product-manager-title">Remove products from your menu</h2>
 
       {error && (
         <p

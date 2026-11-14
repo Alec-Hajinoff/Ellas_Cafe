@@ -147,10 +147,7 @@ function AdminAddProducts({ onProductAdded }) {
       className="admin-add-products"
       aria-labelledby="add-product-heading"
     >
-      <h2 id="add-product-heading">Add a product</h2>
-      <p className="admin-add-products__intro">
-        Add an item to the café menu. Name, price, and category are required.
-      </p>
+      <h2 id="add-product-heading">Add a product to your menu</h2>
 
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="admin-add-products__field">
@@ -253,7 +250,15 @@ function AdminAddProducts({ onProductAdded }) {
             accept=".png,.jpg,.jpeg,.webp,image/png,image/jpeg,image/webp"
             onChange={updateImage}
           />
-          <small>PNG, JPG, or WebP. Maximum file size: 2 MB.</small>
+          <p>
+            {" "}
+            <strong>Product image guidelines:</strong> Square image (1:1 ratio)
+            *** Recommended size: 1000 x 1000 pixels *** Product centred and
+            occupying approximately 80 - 90% of the image *** Leave a small
+            margin around the product *** Use a white or very light background
+            where possible *** Supported formats: JPG, PNG or WebP *** Maximum
+            file size: 2 MB
+          </p>
           {imagePreview && (
             <img
               className="admin-add-products__preview"

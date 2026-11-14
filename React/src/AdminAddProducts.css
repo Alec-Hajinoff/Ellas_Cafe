@@ -10,11 +10,6 @@
   font-size: 1.6rem;
 }
 
-.admin-add-products__intro {
-  margin: 0.5rem 0 1.5rem;
-  color: #625d55;
-}
-
 .admin-add-products__field {
   display: grid;
   gap: 0.45rem;

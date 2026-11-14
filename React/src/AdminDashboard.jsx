@@ -27,8 +27,6 @@ function AdminDashboard() {
 
   return (
     <div className="container mt-4">
-      <h1>Admin Dashboard</h1>
-
       <div className="row">
         <div className="col-12 col-md-11 col-lg-10 mx-auto d-flex flex-column">
           <AdminAddProducts onProductAdded={refreshProducts} />

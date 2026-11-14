@@ -11,9 +11,9 @@ function AboutUs() {
         <div className="container">
           <div className="row justify-content-center">
             <div>
-              <h1 className="about-us-hero-headline">
+              <h2 className="about-us-hero-headline">
                 A neighbourhood café with a lot to offer
-              </h1>
+              </h2>
             </div>
           </div>
         </div>

@@ -267,7 +267,7 @@ try {
 
             $mail->setFrom(
                 $mailUsername,
-                'Loveday Auto Repairs'
+                'Ellas Cafe'
             );
 
             $mail->addAddress($email);
@@ -275,10 +275,10 @@ try {
             $mail->isHTML(false);
 
             $mail->Subject =
-                'Reset your password - Loveday Auto Repairs';
+                'Reset your password - Ellas Cafe';
 
             $mail->Body =
-                "We received a request to reset your password for your Loveday Auto Repairs account.\n\n"
+                "We received a request to reset your password for your Ellas Cafe account.\n\n"
                 . "Please click the link below to reset your password:\n"
                 . $resetLink . "\n\n"
                 . "This link will expire in 1 hour.\n\n"

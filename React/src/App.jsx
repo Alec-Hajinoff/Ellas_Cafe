@@ -6,7 +6,6 @@ import ScrollToTop from "./ScrollToTop";
 import Header from "./Header";
 import Footer from "./Footer";
 import AppRoutes from "./AppRoutes";
-import NavigationBar from "./NavigationBar";
 import "./App.css";
 
 function AppContent() {

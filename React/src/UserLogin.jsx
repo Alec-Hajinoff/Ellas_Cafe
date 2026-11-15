@@ -128,7 +128,7 @@ function UserLogin() {
   return (
     <div className="auth-page-container container">
       <div className="row justify-content-center w-100">
-        <div className="col-12 col-lg-3">
+        <div className="col-10 col-sm-9 col-md-8 col-lg-4 mx-auto">
           <div className="user-login-wrapper">
             <p className="user-login-divider">
               Please enter your login details below to access your account.
@@ -192,7 +192,7 @@ function UserLogin() {
                   {resetMessage}
                 </div>
               )}
-              <button type="submit" className="btn btn-secondary" id="loginBtn">
+              <button type="submit" className="btn-auth-submit" id="loginBtn">
                 Login
                 <span
                   className="spinner-border spinner-border-sm ms-2"

@@ -120,7 +120,7 @@ function UserRegistration() {
                 <div id="success-message">{successMessage}</div>
               )}
               {errorMessage && <div id="error-message">{errorMessage}</div>}
-              <button type="submit" className="btn btn-secondary">
+              <button type="submit" className="btn-auth-submit">
                 {loading ? "Registering" : "Register"}
                 <span
                   className="spinner-border spinner-border-sm ms-2"

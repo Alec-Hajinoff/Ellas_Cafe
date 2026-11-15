@@ -15,22 +15,31 @@
   text-align: center;
 }
 
-.user-registration-wrapper .btn-secondary {
-  background-color: var(--btn-bg-secondary);
-  border: 1px solid transparent;
-  color: var(--btn-text-secondary);
+.user-registration-wrapper .btn-auth-submit {
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-text-inverse);
+  color: var(--color-surface-bg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-pill);
   padding: var(--btn-padding-y) var(--btn-padding-x);
-  border-radius: var(--btn-radius);
   cursor: pointer;
-  transition: background-color var(--transition-fast);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    filter var(--transition-fast);
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.user-registration-wrapper .btn-secondary:hover {
-  background-color: var(--btn-bg-secondary-hover);
+.user-registration-wrapper .btn-auth-submit:hover,
+.user-registration-wrapper .btn-auth-submit:focus {
+  background-color: var(--color-primary);
+  border-color: var(--color-text-inverse);
+  color: var(--color-surface-bg);
+  filter: brightness(1.15);
 }
 
 #success-message {
@@ -51,5 +60,5 @@
 
 #spinnerRegister {
   margin-left: 0.5rem;
-  color: var(--btn-text-secondary);
+  color: var(--color-surface-bg);
 }

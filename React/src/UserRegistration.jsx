@@ -84,7 +84,7 @@ function UserRegistration() {
   return (
     <div className="auth-page-container container">
       <div className="row justify-content-center w-100">
-        <div className="col-12 col-lg-3">
+        <div className="col-10 col-md-8 col-lg-4">
           <div className="user-registration-wrapper">
             <p className="user-registration-divider">
               Please enter your details below to create your account.

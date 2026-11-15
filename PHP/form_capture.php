@@ -284,7 +284,7 @@ try {
 
             $mail->setFrom(
                 $mailUsername,
-                'Loveday Auto Repairs'
+                'Ellas Cafe'
             );
 
             $mail->addAddress($email);
@@ -292,10 +292,10 @@ try {
             $mail->isHTML(false);
 
             $mail->Subject =
-                'Verify your email address - Loveday Auto Repairs';
+                'Verify your email address - Ellas Cafe';
 
             $mail->Body =
-                "Thank you for creating an account with Loveday Auto Repairs.\n\n"
+                "Thank you for creating an account with Ellas Cafe.\n\n"
                 . "Please click the link below to verify your email address:\n"
                 . $verificationLink . "\n\n"
                 . "Once verified, you will be able to sign in to your account.\n\n"

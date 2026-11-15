@@ -138,14 +138,18 @@ function PasswordReset() {
 
   if (tokenStatus.checking) {
     return (
-      <div className="password-reset-container text-center">
-        <div className="password-reset-wrapper">
-          <div className="spinner-border text-primary" role="status">
-            <span className="visually-hidden">Loading, please wait...</span>
+      <div className="auth-page-container container">
+        <div className="row justify-content-center w-100">
+          <div className="col-10 col-sm-9 col-md-8 col-lg-4 mx-auto text-center">
+            <div className="password-reset-wrapper">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading, please wait...</span>
+              </div>
+              <p className="verifying-text">
+                We are verifying your password reset link. Please wait...
+              </p>
+            </div>
           </div>
-          <p className="verifying-text">
-            We are verifying your password reset link. Please wait...
-          </p>
         </div>
       </div>
     );
@@ -153,16 +157,25 @@ function PasswordReset() {
 
   if (!tokenStatus.isValid) {
     return (
-      <div className="password-reset-container">
-        <div className="password-reset-wrapper">
-          <p className="password-reset-divider">Please reset your password</p>
-          <div className="error token-error" aria-live="polite">
-            {tokenStatus.message}
-          </div>
-          <div className="return-home-container">
-            <button onClick={handleReturnToLogin} className="btn btn-secondary">
-              Return to login
-            </button>
+      <div className="auth-page-container container">
+        <div className="row justify-content-center w-100">
+          <div className="col-10 col-sm-9 col-md-8 col-lg-4 mx-auto">
+            <div className="password-reset-wrapper">
+              <p className="password-reset-divider">
+                Please reset your password
+              </p>
+              <div className="error token-error" aria-live="polite">
+                {tokenStatus.message}
+              </div>
+              <div className="return-home-container">
+                <button
+                  onClick={handleReturnToLogin}
+                  className="btn-auth-submit"
+                >
+                  Return to login
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -170,9 +183,9 @@ function PasswordReset() {
   }
 
   return (
-    <div className="password-reset-container container">
-      <div className="row justify-content-center">
-        <div className="col-12 col-lg-3">
+    <div className="auth-page-container container">
+      <div className="row justify-content-center w-100">
+        <div className="col-10 col-sm-9 col-md-8 col-lg-4 mx-auto">
           <div className="password-reset-wrapper">
             <p className="password-reset-divider">
               Please enter your new password and confirm it below.
@@ -231,7 +244,7 @@ function PasswordReset() {
                   <div className="return-home-button-container">
                     <button
                       onClick={handleReturnToLogin}
-                      className="btn btn-secondary return-home-button"
+                      className="btn-auth-submit return-home-button"
                     >
                       Return to login
                     </button>
@@ -242,13 +255,13 @@ function PasswordReset() {
               {!passwordUpdated && (
                 <button
                   type="submit"
-                  className="btn btn-secondary update-password-button"
+                  className="btn-auth-submit update-password-button"
                   disabled={loading}
                 >
                   Update password
                   {loading && (
                     <span
-                      className="spinner-border spinner-border-sm"
+                      className="spinner-border spinner-border-sm ms-2"
                       role="status"
                       aria-hidden="true"
                       id="spinnerUpdate"

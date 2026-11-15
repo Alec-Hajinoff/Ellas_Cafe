@@ -11,6 +11,7 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
   const location = useLocation();
 
   const [hasActiveUsers, setHasActiveUsers] = useState(true);
+  const [isAuthMenuOpen, setIsAuthMenuOpen] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -33,6 +34,8 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
       isMounted = false;
     };
   }, []);
+
+  const bothAuthButtons = !isAuthenticated && !hasActiveUsers;
 
   return (
     <header className="header-wrapper">
@@ -59,28 +62,56 @@ function Header({ isAuthenticated, isLoading, onLogoutComplete }) {
                 (isAuthenticated ? (
                   <LogoutComponent onLogoutComplete={onLogoutComplete} />
                 ) : (
-                  <div className="header-auth-links">
-                    <Link
-                      to="/UserLogin"
-                      className={`header-btn-ghost ${
-                        location.pathname === "/UserLogin" ? "active" : ""
+                  <div
+                    className={`header-auth-links-wrapper ${
+                      bothAuthButtons ? "has-both-auth" : ""
+                    }`}
+                  >
+                    {bothAuthButtons && (
+                      <button
+                        type="button"
+                        className={`header-auth-toggle-btn ${
+                          isAuthMenuOpen ? "active" : ""
+                        }`}
+                        onClick={() => setIsAuthMenuOpen(!isAuthMenuOpen)}
+                        aria-label="Toggle authentication menu"
+                      >
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                        <span className="icon-bar"></span>
+                      </button>
+                    )}
+                    <div
+                      className={`header-auth-links ${
+                        bothAuthButtons && !isAuthMenuOpen
+                          ? "mobile-hidden"
+                          : ""
                       }`}
                     >
-                      Log in
-                    </Link>
-
-                    {!hasActiveUsers && (
                       <Link
-                        to="/UserRegistration"
-                        className={`header-btn-signup ${
-                          location.pathname === "/UserRegistration"
-                            ? "active"
-                            : ""
+                        to="/UserLogin"
+                        className={`header-btn-ghost ${
+                          location.pathname === "/UserLogin" ? "active" : ""
                         }`}
+                        onClick={() => setIsAuthMenuOpen(false)}
                       >
-                        Sign up
+                        Log in
                       </Link>
-                    )}
+
+                      {!hasActiveUsers && (
+                        <Link
+                          to="/UserRegistration"
+                          className={`header-btn-signup ${
+                            location.pathname === "/UserRegistration"
+                              ? "active"
+                              : ""
+                          }`}
+                          onClick={() => setIsAuthMenuOpen(false)}
+                        >
+                          Sign up
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 ))}
             </div>

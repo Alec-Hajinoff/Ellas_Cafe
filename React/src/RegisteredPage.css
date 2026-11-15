@@ -1,4 +1,7 @@
 .registered-page-wrapper {
-  margin-top: 2rem;
-  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 220px);
+  width: 100%;
 }

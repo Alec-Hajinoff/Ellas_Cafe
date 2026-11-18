@@ -5,8 +5,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $allowed_origins = [
     'http://localhost:5173',
-    'https://ellascafe.com',
-    'https://www.ellascafe.com',
+    'https://ellasbakery.uk',
+    'https://www.ellasbakery.uk',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? null;

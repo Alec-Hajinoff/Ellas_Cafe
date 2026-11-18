@@ -4,8 +4,8 @@ header('Content-Type: application/json; charset=utf-8');
 
 $allowed_origins = [
     'http://localhost:5173',
-    'https://ellascafe.com',
-    'https://www.ellascafe.com',
+    'https://ellasbakery.uk',
+    'https://www.ellasbakery.uk',
 ];
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? null;

@@ -28,17 +28,6 @@ $dbName     = $config['DB_NAME'] ?? '';
 $dbUser     = $config['DB_USER'] ?? '';
 $dbPassword = $config['DB_PASSWORD'] ?? '';
 
-if (empty($mailUsername) || empty($mailPassword)) {
-    error_log('password_reset_link.php: Gmail credentials not found in .env file');
-
-    echo json_encode([
-        'success' => false,
-        'message' => 'Server configuration error',
-    ]);
-
-    exit;
-}
-
 if (
     $dbHost === '' ||
     $dbName === '' ||
@@ -241,7 +230,7 @@ try {
         }
 
         $resetLink =
-        'http://localhost:5173/PasswordReset?token=' .
+        'https://ellasbakery.uk/PasswordReset?token=' .
         urlencode($resetToken);
 
         $mail = new PHPMailer(true);
@@ -257,16 +246,14 @@ try {
 
             $mail->isSMTP();
 
-            $mail->Host       = 'smtp.gmail.com';
-            $mail->SMTPAuth   = true;
-            $mail->Username   = $mailUsername;
-            $mail->Password   = $mailPassword;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port       = 587;
+            $mail->Host       = 'localhost';
+            $mail->SMTPAuth   = false;
+            $mail->SMTPSecure = false;
+            $mail->Port       = 25;
             $mail->Timeout    = 30;
 
             $mail->setFrom(
-                $mailUsername,
+                'alec@hertfordstandard.com',
                 'Ellas Cafe'
             );
 

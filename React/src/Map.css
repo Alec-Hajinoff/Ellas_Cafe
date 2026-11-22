@@ -36,24 +36,26 @@
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .cafe-map__location-card:hover {
   transform: translateY(-2px);
-  border-color: var(--color-complementary);
+  border-color: var(--color-primary-shade);
   box-shadow: var(--shadow-md);
 }
 
 .cafe-map__location-card:focus-visible {
-  outline: 3px solid var(--color-complementary);
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 .cafe-map__location-card--active {
-  border-color: var(--color-complementary);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-tint);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
@@ -82,12 +84,12 @@
 .cafe-map__location-name {
   color: var(--color-text-main);
   font-size: var(--font-size-lg);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .cafe-map__location-tag {
-  color: var(--color-text-muted, #6c757d);
-  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
 }
 
 .cafe-map__mobile-carousel {
@@ -130,14 +132,14 @@
 .cafe-map__active-name {
   margin: 0;
   color: var(--color-text-main);
-  font-size: 1.35rem;
-  font-weight: 700;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .cafe-map__active-tag {
-  color: var(--color-complementary);
-  font-size: 0.875rem;
-  font-weight: 600;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
 }
 
 .cafe-map__contact-list {
@@ -169,13 +171,13 @@
 .cafe-map__contact-value {
   color: var(--color-text-main);
   font-size: var(--font-size-lg);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   overflow-wrap: anywhere;
   text-decoration: none;
 }
 
 a.cafe-map__contact-value:hover {
-  color: var(--color-complementary);
+  color: var(--color-primary);
 }
 
 .cafe-map__frame {
@@ -206,7 +208,7 @@ a.cafe-map__contact-value:hover {
   }
 
   .cafe-map__location-name {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 }
 
@@ -252,10 +254,10 @@ a.cafe-map__contact-value:hover {
     align-items: center;
     justify-content: center;
     border: 0;
-    border-radius: 999px;
-    background-color: rgba(0, 0, 0, 0.55);
-    color: #fff;
-    font-size: 1.35rem;
+    border-radius: var(--radius-pill);
+    background-color: rgba(25, 24, 23, 0.65);
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-lg);
     line-height: 1;
     cursor: pointer;
   }
@@ -275,17 +277,21 @@ a.cafe-map__contact-value:hover {
     display: flex;
     flex-direction: column;
     padding: 1.25rem 0.9rem 0.6rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    color: #fff;
+    background: linear-gradient(
+      to top,
+      rgba(25, 24, 23, 0.8),
+      rgba(25, 24, 23, 0)
+    );
+    color: var(--color-text-inverse);
   }
 
   .cafe-map__carousel-title {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
   }
 
   .cafe-map__carousel-sub {
-    font-size: 0.78rem;
+    font-size: var(--font-size-xs);
     opacity: 0.9;
   }
 
@@ -301,17 +307,17 @@ a.cafe-map__contact-value:hover {
     height: 9px;
     padding: 0;
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     background-color: var(--color-border);
     cursor: pointer;
     transition:
-      transform 0.2s ease,
-      background-color 0.2s ease;
+      transform var(--transition-fast),
+      background-color var(--transition-fast);
   }
 
   .cafe-map__dot--active {
     width: 22px;
-    background-color: var(--color-complementary);
+    background-color: var(--color-primary);
   }
 
   .cafe-map__layout {

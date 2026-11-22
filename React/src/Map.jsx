@@ -5,7 +5,7 @@ import southgateImg from "./Images/Cafe_exterior/Southgate.webp";
 import "./Map.css";
 
 const WINCHMORE_HILL_MAP_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.525361778143!2d-0.09709881271413798!3d51.63039503699291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876193281ba5c79%3A0xc08a8d51f4c06501!2s701-703%20Green%20Lanes%2C%20London%20N21%203RS!5e0!3m2!1sen!2suk!4v1794285759606!5m2!1sen!2suk"; //[cite: 9]
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.525361778143!2d-0.09709881271413798!3d51.63039503699291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876193281ba5c79%3A0xc08a8d51f4c06501!2s701-703%20Green%20Lanes%2C%20London%20N21%203RS!5e0!3m2!1sen!2suk!4v1794285759606!5m2!1sen!2suk";
 
 const PALMERS_GREEN_MAP_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d519.109002100409!2d-0.11137361421939626!3d51.61864257136384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761900329aed49%3A0x4f4a3ccf8d8b9799!2sEllas%20Bakery%2C%20Palmers%20Green!5e0!3m2!1sen!2suk!4v1795330874850!5m2!1sen!2suk";
@@ -162,7 +162,7 @@ function Map() {
               aria-label="Previous cafe location"
               onClick={() => handleSelectIndex(selectedIndex - 1)}
             >
-              ÔÇ╣
+              &lsaquo;
             </button>
 
             <button
@@ -171,7 +171,7 @@ function Map() {
               aria-label="Next cafe location"
               onClick={() => handleSelectIndex(selectedIndex + 1)}
             >
-              ÔÇ║
+              &rsaquo;
             </button>
 
             <div className="cafe-map__carousel-caption">

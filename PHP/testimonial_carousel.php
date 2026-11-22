@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 $allowed_origins = [
     'http://localhost:5173',
     'https://ellasbakery.uk',
@@ -11,9 +13,7 @@ $origin = $_SERVER['HTTP_ORIGIN'] ?? null;
 if ($origin !== null && in_array($origin, $allowed_origins, true)) {
     header("Access-Control-Allow-Origin: $origin");
 } elseif ($origin === null) {
-
     // Allow same-origin and direct requests.
-
 } else {
     header('HTTP/1.1 403 Forbidden');
     exit;
@@ -44,7 +44,7 @@ if ($config === false || trim($apiKey) === '') {
     exit;
 }
 
-$placeId   = 'ChIJD-O8y1AZdkgRRVQRC_KrZ9Y';
+$placeId   = 'ChIJsZCAgv8ZdkgRa0rjIe8muPg';
 $fieldMask = implode(',', [
     'rating',
     'userRatingCount',
@@ -79,7 +79,14 @@ curl_close($curl);
 if ($responseBody === false || $statusCode < 200 || $statusCode >= 300) {
     error_log('Google Places request failed: ' . ($curlError ?: 'HTTP ' . $statusCode));
     http_response_code(502);
-    echo json_encode(['success' => false, 'message' => 'Unable to load reviews right now.']);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Unable to load reviews right now.',
+        'debug'   => [
+            'statusCode' => $statusCode,
+            'curlError'  => $curlError ?: null,
+        ],
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     exit;
 }
 

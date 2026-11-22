@@ -5,13 +5,12 @@ import southgateImg from "./Images/Cafe_exterior/Southgate.webp";
 import "./Map.css";
 
 const SHARED_MAP_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.525361778143!2d-0.09709881271413798!3d51.63039503699291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876193281ba5c79%3A0xc08a8d51f4c06501!2s701-703%20Green%20Lanes%2C%20London%20N21%203RS!5e0!3m2!1sen!2suk!4v1794285759606!5m2!1sen!2suk";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.525361778143!2d-0.09709881271413798!3d51.63039503699291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876193281ba5c79%3A0xc08a8d51f4c06501!2s701-703%20Green%20Lanes%2C%20London%20N21%203RS!5e0!3m2!1sen!2suk!4v1794285759606!5m2!1sen!2suk"; //[cite: 7]
 
 const LOCATIONS = [
   {
     id: "winchmore-hill",
     name: "Winchmore Hill",
-    tag: "Flagship Café • Dummy Tag",
     image: winchmoreHillImg,
     imageAlt: "Exterior view of the Winchmore Hill café",
     address: "Ellas Café, 705 Green Lanes, London, N21 3RS",
@@ -24,7 +23,6 @@ const LOCATIONS = [
   {
     id: "palmers-green",
     name: "Palmers Green",
-    tag: "Local Branch • Dummy Tag",
     image: palmersGreenImg,
     imageAlt: "Exterior view of the Palmers Green café",
     address: "Ellas Café, 705 Green Lanes, London, N21 3RS",
@@ -37,7 +35,6 @@ const LOCATIONS = [
   {
     id: "southgate",
     name: "Southgate",
-    tag: "Neighbourhood Spot • Dummy Tag",
     image: southgateImg,
     imageAlt: "Exterior view of the Southgate café",
     address: "Ellas Café, 705 Green Lanes, London, N21 3RS",
@@ -132,7 +129,7 @@ function Map() {
                   <span className="cafe-map__location-name">
                     {location.name}
                   </span>
-                  <span className="cafe-map__location-tag">{location.tag}</span>
+                  {/* Removed location tag span */}
                 </div>
               </button>
             );
@@ -176,9 +173,7 @@ function Map() {
               <span className="cafe-map__carousel-title">
                 {selectedLocation.name}
               </span>
-              <span className="cafe-map__carousel-sub">
-                {selectedLocation.tag}
-              </span>
+              {/* Removed carousel subtitle span */}
             </div>
           </div>
 
@@ -213,9 +208,7 @@ function Map() {
           >
             <div className="cafe-map__active-heading">
               <h3 className="cafe-map__active-name">{selectedLocation.name}</h3>
-              <span className="cafe-map__active-tag">
-                {selectedLocation.tag}
-              </span>
+              {/* Removed active location tag span */}
             </div>
 
             <div className="cafe-map__contact-list">

@@ -87,11 +87,6 @@
   font-weight: var(--font-weight-bold);
 }
 
-.cafe-map__location-tag {
-  color: var(--color-text-muted);
-  font-size: var(--font-size-sm);
-}
-
 .cafe-map__mobile-carousel {
   display: none;
 }
@@ -133,12 +128,6 @@
   margin: 0;
   color: var(--color-text-main);
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-}
-
-.cafe-map__active-tag {
-  color: var(--color-primary);
-  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
 }
 
@@ -288,11 +277,6 @@ a.cafe-map__contact-value:hover {
   .cafe-map__carousel-title {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-  }
-
-  .cafe-map__carousel-sub {
-    font-size: var(--font-size-xs);
-    opacity: 0.9;
   }
 
   .cafe-map__carousel-dots {

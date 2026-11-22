@@ -34,6 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     exit;
 }
 
+$cacheFile = __DIR__ . '/customer_reviews_cache.json';
+$cacheTtl  = 7 * 24 * 60 * 60;
+
+if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTtl) {
+    echo file_get_contents($cacheFile);
+    exit;
+}
+
 $config = parse_ini_file(__DIR__ . '/../.env', false, INI_SCANNER_RAW);
 $apiKey = $config['GOOGLE_PLACES_API_KEY'] ?? '';
 
@@ -112,10 +120,14 @@ $reviews = array_map(static function ($review) {
     ];
 }, $place['reviews'] ?? []);
 
-echo json_encode([
+$payload = json_encode([
     'success'         => true,
     'rating'          => $place['rating'] ?? null,
     'userRatingCount' => $place['userRatingCount'] ?? null,
     'googleMapsUri'   => $place['googleMapsUri'] ?? '',
     'reviews'         => $reviews,
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+file_put_contents($cacheFile, $payload);
+
+echo $payload;

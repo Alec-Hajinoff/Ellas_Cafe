@@ -101,7 +101,6 @@ function Map() {
       <h2 className="cafe-map__title">Where to find us</h2>
 
       <div className="cafe-map__container">
-        {/* Desktop: 3 interactive location cards */}
         <div
           className="cafe-map__desktop-selector"
           role="tablist"

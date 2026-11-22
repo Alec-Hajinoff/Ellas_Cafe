@@ -4,6 +4,93 @@
   padding-inline: 1rem;
 }
 
+.cafe-map__container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cafe-map__title {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-main);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+}
+
+.cafe-map__desktop-selector {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.cafe-map__location-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  background-color: var(--color-surface-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.cafe-map__location-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-shade);
+  box-shadow: var(--shadow-md);
+}
+
+.cafe-map__location-card:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.cafe-map__location-card--active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-tint);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cafe-map__location-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.cafe-map__location-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cafe-map__location-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1.1rem;
+}
+
+.cafe-map__location-name {
+  color: var(--color-text-main);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.cafe-map__mobile-carousel {
+  display: none;
+}
+
 .cafe-map__layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -11,8 +98,6 @@
   align-items: stretch;
   gap: 2rem;
   width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
 }
 
 .cafe-map__contact-card {
@@ -26,6 +111,24 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
+}
+
+.cafe-map__active-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cafe-map__active-name {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .cafe-map__contact-list {
@@ -57,13 +160,13 @@
 .cafe-map__contact-value {
   color: var(--color-text-main);
   font-size: var(--font-size-lg);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   overflow-wrap: anywhere;
   text-decoration: none;
 }
 
 a.cafe-map__contact-value:hover {
-  color: var(--color-complementary);
+  color: var(--color-primary);
 }
 
 .cafe-map__frame {
@@ -83,17 +186,122 @@ a.cafe-map__contact-value:hover {
   border: 0;
 }
 
-.cafe-map__title {
-  margin: 0 0 1.5rem;
-  color: var(--color-text-main);
+@media (max-width: 991.98px) {
+  .cafe-map__desktop-selector {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
 
-  font-weight: var(--font-weight-bold);
-  text-align: center;
+  .cafe-map__location-body {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .cafe-map__location-name {
+    font-size: var(--font-size-md);
+  }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 767.98px) {
   .cafe-map {
     padding-inline: 1rem;
+  }
+
+  .cafe-map__desktop-selector {
+    display: none;
+  }
+
+  .cafe-map__mobile-carousel {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .cafe-map__carousel-stage {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-surface-card);
+  }
+
+  .cafe-map__carousel-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cafe-map__carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background-color: rgba(25, 24, 23, 0.65);
+    color: var(--color-text-inverse);
+    font-size: var(--font-size-lg);
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .cafe-map__carousel-arrow--prev {
+    left: 0.6rem;
+  }
+
+  .cafe-map__carousel-arrow--next {
+    right: 0.6rem;
+  }
+
+  .cafe-map__carousel-caption {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem 0.9rem 0.6rem;
+    background: linear-gradient(
+      to top,
+      rgba(25, 24, 23, 0.8),
+      rgba(25, 24, 23, 0)
+    );
+    color: var(--color-text-inverse);
+  }
+
+  .cafe-map__carousel-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .cafe-map__carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.65rem;
+  }
+
+  .cafe-map__dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background-color: var(--color-border);
+    cursor: pointer;
+    transition:
+      transform var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+
+  .cafe-map__dot--active {
+    width: 22px;
+    background-color: var(--color-primary);
   }
 
   .cafe-map__layout {
@@ -105,11 +313,11 @@ a.cafe-map__contact-value:hover {
   }
 
   .cafe-map__contact-card {
-    padding: 1.75rem;
+    padding: 1.5rem;
   }
 
   .cafe-map__contact-list {
-    gap: 1.25rem;
+    gap: 1.15rem;
   }
 
   .cafe-map__frame,

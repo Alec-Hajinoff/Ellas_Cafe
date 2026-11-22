@@ -18,8 +18,8 @@ const LOCATIONS = [
     id: "winchmore-hill",
     name: "Winchmore Hill",
     image: winchmoreHillImg,
-    imageAlt: "Exterior view of the Winchmore Hill café",
-    address: "Ellas Café, 705 Green Lanes, London, N21 3RS",
+    imageAlt: "Exterior view of the Winchmore Hill cafe",
+    address: "Ellas Cafe, 705 Green Lanes, London, N21 3RS",
     phoneDisplay: "020 8374 4310",
     phoneHref: "tel:+442083744310",
     email: "contact@ellascafe.co.uk",
@@ -30,8 +30,8 @@ const LOCATIONS = [
     id: "palmers-green",
     name: "Palmers Green",
     image: palmersGreenImg,
-    imageAlt: "Exterior view of the Palmers Green café",
-    address: "Ellas Café, 42 Aldermans Hill, London, N13 4PN",
+    imageAlt: "Exterior view of the Palmers Green cafe",
+    address: "Ellas Cafe, 42 Aldermans Hill, London, N13 4PN",
     phoneDisplay: "020 8374 4310",
     phoneHref: "tel:+442083744310",
     email: "contact@ellascafe.co.uk",
@@ -42,8 +42,8 @@ const LOCATIONS = [
     id: "southgate",
     name: "Southgate",
     image: southgateImg,
-    imageAlt: "Exterior view of the Southgate café",
-    address: "Ellas Café, 10 Ashfield Parade, London, N14 5AB",
+    imageAlt: "Exterior view of the Southgate cafe",
+    address: "Ellas Cafe, 10 Ashfield Parade, London, N14 5AB",
     phoneDisplay: "020 8374 4310",
     phoneHref: "tel:+442083744310",
     email: "contact@ellascafe.co.uk",
@@ -107,7 +107,7 @@ function Map() {
         <div
           className="cafe-map__desktop-selector"
           role="tablist"
-          aria-label="Choose a café location"
+          aria-label="Choose a cafe location"
         >
           {LOCATIONS.map((location, index) => {
             const isActive = index === selectedIndex;
@@ -145,7 +145,7 @@ function Map() {
           className="cafe-map__mobile-carousel"
           role="region"
           aria-roledescription="carousel"
-          aria-label="Café locations carousel"
+          aria-label="Cafe locations carousel"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -159,7 +159,7 @@ function Map() {
             <button
               type="button"
               className="cafe-map__carousel-arrow cafe-map__carousel-arrow--prev"
-              aria-label="Previous café location"
+              aria-label="Previous cafe location"
               onClick={() => handleSelectIndex(selectedIndex - 1)}
             >
               ‹
@@ -168,7 +168,7 @@ function Map() {
             <button
               type="button"
               className="cafe-map__carousel-arrow cafe-map__carousel-arrow--next"
-              aria-label="Next café location"
+              aria-label="Next cafe location"
               onClick={() => handleSelectIndex(selectedIndex + 1)}
             >
               ›
@@ -184,7 +184,7 @@ function Map() {
           <div
             className="cafe-map__carousel-dots"
             role="tablist"
-            aria-label="Select café location slide"
+            aria-label="Select cafe location slide"
           >
             {LOCATIONS.map((location, index) => {
               const isActive = index === selectedIndex;
@@ -306,7 +306,7 @@ function Map() {
             <iframe
               key={selectedLocation.id}
               src={selectedLocation.mapSrc}
-              title={`Map showing ${selectedLocation.name} café location`}
+              title={`Map showing ${selectedLocation.name} cafe location`}
               allowFullScreen
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"

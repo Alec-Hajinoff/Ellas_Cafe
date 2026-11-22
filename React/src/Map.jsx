@@ -4,8 +4,14 @@ import palmersGreenImg from "./Images/Cafe_exterior/Palmers_Green.webp";
 import southgateImg from "./Images/Cafe_exterior/Southgate.webp";
 import "./Map.css";
 
-const SHARED_MAP_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.525361778143!2d-0.09709881271413798!3d51.63039503699291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876193281ba5c79%3A0xc08a8d51f4c06501!2s701-703%20Green%20Lanes%2C%20London%20N21%203RS!5e0!3m2!1sen!2suk!4v1794285759606!5m2!1sen!2suk"; //[cite: 7]
+const WINCHMORE_HILL_MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1191.525361778143!2d-0.09709881271413798!3d51.63039503699291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876193281ba5c79%3A0xc08a8d51f4c06501!2s701-703%20Green%20Lanes%2C%20London%20N21%203RS!5e0!3m2!1sen!2suk!4v1794285759606!5m2!1sen!2suk"; //[cite: 9]
+
+const PALMERS_GREEN_MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d519.109002100409!2d-0.11137361421939626!3d51.61864257136384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761900329aed49%3A0x4f4a3ccf8d8b9799!2sEllas%20Bakery%2C%20Palmers%20Green!5e0!3m2!1sen!2suk!4v1795330874850!5m2!1sen!2suk";
+
+const SOUTHGATE_MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d858.8957522371837!2d-0.1285445457973839!3d51.631419092191464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487619ff828090b1%3A0xf8b826ef21e34a6b!2sEllas%20Bakery!5e0!3m2!1sen!2suk!4v1795330922440!5m2!1sen!2suk";
 
 const LOCATIONS = [
   {
@@ -18,31 +24,31 @@ const LOCATIONS = [
     phoneHref: "tel:+442083744310",
     email: "contact@ellascafe.co.uk",
     hours: "Mon - Fri | 8am - 4:30pm",
-    mapSrc: SHARED_MAP_SRC,
+    mapSrc: WINCHMORE_HILL_MAP_SRC,
   },
   {
     id: "palmers-green",
     name: "Palmers Green",
     image: palmersGreenImg,
     imageAlt: "Exterior view of the Palmers Green café",
-    address: "Ellas Café, 705 Green Lanes, London, N21 3RS",
+    address: "Ellas Café, 42 Aldermans Hill, London, N13 4PN",
     phoneDisplay: "020 8374 4310",
     phoneHref: "tel:+442083744310",
     email: "contact@ellascafe.co.uk",
     hours: "Mon - Fri | 8am - 4:30pm",
-    mapSrc: SHARED_MAP_SRC,
+    mapSrc: PALMERS_GREEN_MAP_SRC,
   },
   {
     id: "southgate",
     name: "Southgate",
     image: southgateImg,
     imageAlt: "Exterior view of the Southgate café",
-    address: "Ellas Café, 705 Green Lanes, London, N21 3RS",
+    address: "Ellas Café, 10 Ashfield Parade, London, N14 5AB",
     phoneDisplay: "020 8374 4310",
     phoneHref: "tel:+442083744310",
     email: "contact@ellascafe.co.uk",
     hours: "Mon - Fri | 8am - 4:30pm",
-    mapSrc: SHARED_MAP_SRC,
+    mapSrc: SOUTHGATE_MAP_SRC,
   },
 ];
 
@@ -129,7 +135,6 @@ function Map() {
                   <span className="cafe-map__location-name">
                     {location.name}
                   </span>
-                  {/* Removed location tag span */}
                 </div>
               </button>
             );
@@ -173,7 +178,6 @@ function Map() {
               <span className="cafe-map__carousel-title">
                 {selectedLocation.name}
               </span>
-              {/* Removed carousel subtitle span */}
             </div>
           </div>
 
@@ -208,7 +212,6 @@ function Map() {
           >
             <div className="cafe-map__active-heading">
               <h3 className="cafe-map__active-name">{selectedLocation.name}</h3>
-              {/* Removed active location tag span */}
             </div>
 
             <div className="cafe-map__contact-list">

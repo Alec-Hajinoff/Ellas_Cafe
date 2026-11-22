@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 $allowed_origins = [
     'http://localhost:5173',
     'https://ellasbakery.uk',
@@ -11,9 +13,7 @@ $origin = $_SERVER['HTTP_ORIGIN'] ?? null;
 if ($origin !== null && in_array($origin, $allowed_origins, true)) {
     header("Access-Control-Allow-Origin: $origin");
 } elseif ($origin === null) {
-
     // Allow same-origin and direct requests.
-
 } else {
     header('HTTP/1.1 403 Forbidden');
     exit;
@@ -34,6 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
     exit;
 }
 
+$cacheFile = __DIR__ . '/customer_reviews_cache.json';
+$cacheTtl  = 7 * 24 * 60 * 60;
+
+if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTtl) {
+    echo file_get_contents($cacheFile);
+    exit;
+}
+
 $config = parse_ini_file(__DIR__ . '/../.env', false, INI_SCANNER_RAW);
 $apiKey = $config['GOOGLE_PLACES_API_KEY'] ?? '';
 
@@ -44,7 +52,7 @@ if ($config === false || trim($apiKey) === '') {
     exit;
 }
 
-$placeId   = 'ChIJD-O8y1AZdkgRRVQRC_KrZ9Y';
+$placeId   = 'ChIJsZCAgv8ZdkgRa0rjIe8muPg';
 $fieldMask = implode(',', [
     'rating',
     'userRatingCount',
@@ -79,7 +87,14 @@ curl_close($curl);
 if ($responseBody === false || $statusCode < 200 || $statusCode >= 300) {
     error_log('Google Places request failed: ' . ($curlError ?: 'HTTP ' . $statusCode));
     http_response_code(502);
-    echo json_encode(['success' => false, 'message' => 'Unable to load reviews right now.']);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Unable to load reviews right now.',
+        'debug'   => [
+            'statusCode' => $statusCode,
+            'curlError'  => $curlError ?: null,
+        ],
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -105,10 +120,14 @@ $reviews = array_map(static function ($review) {
     ];
 }, $place['reviews'] ?? []);
 
-echo json_encode([
+$payload = json_encode([
     'success'         => true,
     'rating'          => $place['rating'] ?? null,
     'userRatingCount' => $place['userRatingCount'] ?? null,
     'googleMapsUri'   => $place['googleMapsUri'] ?? '',
     'reviews'         => $reviews,
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+
+file_put_contents($cacheFile, $payload);
+
+echo $payload;

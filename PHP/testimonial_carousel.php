@@ -35,11 +35,32 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 $cacheFile = __DIR__ . '/customer_reviews_cache.json';
-$cacheTtl  = 7 * 24 * 60 * 60;
+$cacheTtl  = 24 * 60 * 60;
+
+function serveCachedReviews(string $cacheFile): bool
+{
+    if (! is_file($cacheFile)) {
+        return false;
+    }
+
+    $cachedContent = file_get_contents($cacheFile);
+    if ($cachedContent === false || trim($cachedContent) === '') {
+        return false;
+    }
+
+    $decoded = json_decode($cachedContent, true);
+    if (! is_array($decoded) || empty($decoded['success'])) {
+        return false;
+    }
+
+    echo $cachedContent;
+    return true;
+}
 
 if (is_file($cacheFile) && (time() - filemtime($cacheFile)) < $cacheTtl) {
-    echo file_get_contents($cacheFile);
-    exit;
+    if (serveCachedReviews($cacheFile)) {
+        exit;
+    }
 }
 
 $config = parse_ini_file(__DIR__ . '/../.env', false, INI_SCANNER_RAW);
@@ -47,6 +68,9 @@ $apiKey = $config['GOOGLE_PLACES_API_KEY'] ?? '';
 
 if ($config === false || trim($apiKey) === '') {
     error_log('Google Places API key not found in .env file');
+    if (serveCachedReviews($cacheFile)) {
+        exit;
+    }
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => 'Server configuration error']);
     exit;
@@ -86,6 +110,9 @@ curl_close($curl);
 
 if ($responseBody === false || $statusCode < 200 || $statusCode >= 300) {
     error_log('Google Places request failed: ' . ($curlError ?: 'HTTP ' . $statusCode));
+    if (serveCachedReviews($cacheFile)) {
+        exit;
+    }
     http_response_code(502);
     echo json_encode([
         'success' => false,
@@ -101,6 +128,9 @@ if ($responseBody === false || $statusCode < 200 || $statusCode >= 300) {
 $place = json_decode($responseBody, true);
 if (! is_array($place)) {
     error_log('Google Places returned invalid JSON');
+    if (serveCachedReviews($cacheFile)) {
+        exit;
+    }
     http_response_code(502);
     echo json_encode(['success' => false, 'message' => 'Unable to load reviews right now.']);
     exit;

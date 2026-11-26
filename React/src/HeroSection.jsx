@@ -3,10 +3,10 @@ import "./HeroSection.css";
 
 function HeroSection() {
   return (
-    <section className="hero-section-wrapper d-flex align-items-center">
+    <section className="hero-section-wrapper position-relative d-flex align-items-center">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-4">
+          <div className="col-12 col-lg-4 hero-col">
             <div className="hero-content">
               <h1 className="hero-heading">
                 Artisan Coffee &amp; Fresh Food in Winchmore Hill.
